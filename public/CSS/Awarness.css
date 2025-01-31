@@ -1,0 +1,287 @@
+#Aware {
+  height: 100vh;
+  background-image: linear-gradient(to bottom,
+      rgba(40, 39, 39, 0.6),
+      rgba(24, 26, 27, 0.8)),
+    url("/images/camp.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+#Aware h1 {
+  position: absolute;
+  color: white;
+  top: 12rem;
+  font-weight: bolder;
+  font-size: 4rem;
+  left: 8rem;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+.imgtext {
+  position: absolute;
+  top: 20rem;
+  width: 65vw;
+  height: 60vh;
+  left: 8rem;
+  font-size: medium;
+  font-weight: 400;
+  margin-top: 3rem;
+  font-size: 1.5rem;
+  color: white;
+}
+
+#btn-aware {
+  border-radius: 1.2rem;
+  background-color: #ff5757;
+  height: 4rem;
+  width: 13rem;
+  color: white;
+  font-weight: bold;
+  position: absolute;
+  top: 35rem;
+  left: 8rem;
+  font-size: 2.2rem;
+  border: none;
+}
+
+.info-sec {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.info-card {
+  display: flex;
+  padding: 10px;
+  justify-content: center;
+  margin-bottom: 3rem;
+  margin: 1rem 5rem 0 5rem;
+}
+
+.text-info {
+  line-height: 1.4rem;
+  font-size: 1.3rem;
+  margin: 0 3rem;
+  color: rgb(25, 25, 25) !important;
+}
+
+#pic {
+  height: 20rem;
+  width: 35rem;
+  border-radius: 1rem;
+}
+
+.hidden-img {
+  display: none;
+}
+
+#info-form {
+  height: 35rem;
+  margin: 2rem;
+  display: flex;
+  justify-content: space-between;
+  border: 4px double red;
+  line-height: 2rem;
+}
+
+.orgcamp-img {
+  height: 32rem;
+  width: 45%;
+  margin: 2rem;
+  background-image: url("/images/bloodbeat.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.camp-form {
+  height: 35rem;
+  width: 45%;
+  margin-top: 2rem;
+  margin-right: 2rem;
+}
+
+.fa-asterisk {
+  color: red;
+  font-size: 0.5rem;
+}
+
+#btn-submit {
+  color: white;
+  background-color: #ff5757;
+  height: 3rem;
+  width: 90%;
+  margin-top: 10px;
+  border-radius: 0.8rem;
+  border: none;
+  font-size: 1.6rem;
+}
+
+.camp-form input {
+  border: none;
+  outline: none;
+  border-bottom: 1px solid black;
+  width: 90%;
+  height: 2rem;
+}
+
+@media (max-width: 1200px) {
+  .info-card {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 780px) {
+  #Aware h1 {
+    left: 3.8rem;
+    font-size: 3rem;
+  }
+
+  .imgtext {
+    top: 18rem;
+    left: 3.8rem;
+    font-size: 1.5rem;
+    line-height: 2rem;
+    width: 80vw;
+  }
+
+  #btn-aware {
+    top: 38rem;
+    left: 3.8rem;
+  }
+
+  #info-form {
+    display: flex;
+    flex-wrap: wrap;
+    height: 60rem;
+    margin: 1.5rem;
+  }
+
+  .orgcamp-img {
+    height: 21rem;
+    width: 95%;
+    margin: 1rem;
+  }
+
+  .camp-form {
+    height: 35rem;
+    width: 90%;
+    margin: 1rem;
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 450px) {
+  #Aware {
+    height: 100vh!important;
+  }
+
+  #Aware h1 {
+    font-size: 2rem;
+    font-size: bold;
+    left: 3rem;
+    top: 7rem;
+  }
+
+  .imgtext {
+    font-size: 1.5rem;
+    left: 3rem;
+    top: 9rem;
+    height: 200px;
+    width: 80vw;
+    line-height: 2rem;
+  }
+
+  #btn-aware {
+    height: 3rem;
+    width: 9rem;
+    font-size: 1.4rem;
+    border-radius: 0.8rem;
+    left: 3rem;
+    top: 40rem;
+  }
+
+  .info-card {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px;
+    justify-content: center;
+    margin-bottom: 3rem;
+    margin: 1rem;
+  }
+
+  .text-info {
+    line-height: 1.4rem;
+    font-size: 1.2rem;
+    margin: 0 3rem;
+    color: black !important;
+  }
+
+  .visible-img {
+    display: none;
+  }
+
+  #pic {
+    height: 18rem;
+    width: 18rem;
+  }
+
+  .hidden-img {
+    display: inline;
+  }
+
+  #btn-submit {
+    width: 7rem;
+    height: 3rem;
+    font-size: 1.2rem;
+  }
+
+  #info-form {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0.5rem;
+    height: 50rem;
+  }
+
+  .camp-form input {
+    width: 95%;
+    height: 2rem;
+  }
+
+  .orgcamp-img {
+    height: 10rem;
+    width: 91%;
+    margin: 0.5rem;
+    margin-left: 1rem;
+    background-position: center;
+  }
+
+  .camp-form {
+    width: 91vw;
+    margin: 1rem;
+  }
+}
+
+@media (max-width: 375px) {
+  #Aware h1 {
+    font-size: 1.8rem;
+    font-size: bold;
+    left: 3rem;
+    top: 7rem;
+  }
+
+  .imgtext {
+    font-size: 1.2rem;
+    line-height: 2rem;
+  }
+
+  .camp-form input {
+    width: 10rem;
+    height: 2rem;
+  }
+
+  #info-form {
+    margin: 1.1rem;
+    height: 48rem;
+  }
+}

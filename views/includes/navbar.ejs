@@ -1,0 +1,37 @@
+<nav class="navbar navbar-expand-md bg-body-light sticky-top">
+  <div class="container-fluid">
+    <!-- Navbar icon -->
+    <a class="navbar-brand z-2" href="/lifeBridge"
+      ><img
+        src="../images/Life-Bridge-Logo.png"
+        alt="lifeBridge-Logo"
+        class="navbar-brand-img"
+    /></a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNavAltMarkup"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <!-- Navigation links -->
+    <div class="collapse navbar-collapse navbar-main" id="navbarNavAltMarkup">
+      <div class="navbar-nav ms-auto ">
+        <a class="nav-link main-link" href="/lifeBridge/awareness">Spread Awareness</a>
+        <a class="nav-link main-link" href="#">Find Location</a>
+        <a class="nav-link main-link" href="#">Organise Camp</a>
+      </div>
+      <div class="navbar-nav ms-auto">
+        <!-- If user not Exist -->
+        <% if(!currentUser) { %>
+        <a class="nav-link login-btn" href="/lifeBridge/login"><b>LOG IN &nbsp;<i class="fa-solid fa-arrow-right"></i></b></a>
+        <% } %>
+        <!-- If user Exist -->
+        <% if(currentUser) { %>
+        <a class="nav-link" href="/logout"><b>Logout</b></a>
+        <% } %>
+      </div>
+    </div>
+  </div>
+</nav>
