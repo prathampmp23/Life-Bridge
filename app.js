@@ -104,10 +104,13 @@ app.use((req, res, next) => {
 app.use("/", userRouter);
 
 // **Root route**
+app.get("/", (req, res) => {
+  res.render("listing/index.ejs");
+});
+// Index route
 app.get("/lifeBridge", (req, res) => {
   res.render("listing/index.ejs");
 });
-
 // **Awarness route**
 app.get("/lifeBridge/awareness", (req, res) => {
   res.render("listing/awarness.ejs");
