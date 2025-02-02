@@ -47,7 +47,7 @@ main()
 
 // **Connection with MongoDB
 async function main() {
-  await mongoose.connect("mongodb://127.0.0.1:27017/lifeBridge");
+  await mongoose.connect("mongodb+srv://ashishchoudhari5002:ashish21112004@cluster0.70trs.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0");
 }
 
 // // **Session store
@@ -66,7 +66,7 @@ async function main() {
 // **Cookie Session Option
 const sessionOption = {
   // store,
-  secret: process.env.SECRET,
+  secret: process.env.SECRET || 'Mysupersecretstring',
   resave: false,
   saveUninitialized: true,
   cookie: {
@@ -120,7 +120,7 @@ app.get("/lifeBridge/findLocation", (req, res) => {
   res.render("listing/findLocation.ejs");
 });
 // **Organize camp route**
-app.get("/lifeBridg/OrganiseCamp", (req, res) => {
+app.get("/lifeBridge/OrganiseCamp", (req, res) => {
   res.render("listing/organizeCamp.ejs");
 });
 
@@ -136,6 +136,6 @@ app.use((err, req, res, next) => {
   res.render("error.ejs", { message });
 });
 
-app.listen(8080, () => {
-  console.log("Server is listening to port 8080.");
+app.listen(3000, () => {
+  console.log("Server is listening to port 3000.");
 });
