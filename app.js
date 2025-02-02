@@ -16,6 +16,8 @@ const flash = require("connect-flash");
 const passport = require("passport");
 const LocalStrategy = require("passport-local");
 const User = require("./models/user.js");
+const Donor = require("./models/donor.js")
+
 
 // Require Express Router
 const userRouter = require("./Router/user.js");
@@ -119,9 +121,26 @@ app.get("/lifeBridge/awareness", (req, res) => {
 app.get("/lifeBridge/findLocation", (req, res) => {
   res.render("listing/findLocation.ejs");
 });
+// Route to handle search query
+app.get("/lifeBridge/findLocation/search", async (req, res) => {
+  const { bloodGroup, region, district } = req.query;
+  let query = {};
+
+  if (bloodGroup) query.bloodGroup = bloodGroup;
+  if (region) query.region = region;
+  if (district) query.district = district;
+
+  try {
+      const donors = await Donor.find(query); // Fetch donors based on search criteria
+      res.render("listing/filtered.ejs", { donors });
+  } catch (error) {
+    console.log("Received search parameters:", req.query);
+      res.status(500).send("Error searching donors");
+  }
+});
 // **Organize camp route**
 app.get("/lifeBridge/OrganiseCamp", (req, res) => {
-  res.render("listing/organizeCamp.ejs");
+  res.render("listing/filtered.ejs");
 });
 
 // **Custom ExpressError for "404" Error "page not found"
