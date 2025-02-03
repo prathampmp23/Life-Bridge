@@ -1,10 +1,8 @@
 <% layout("layouts/boilerplate") %>
 <body>
-    <div class="container">
-    
         <div class="search-container">
             <h2>Find Donors</h2>
-            <form action="/lifeBridge/findLocation/search"  method="GET">
+            <form action="/lifeBridge/filtered/search"  method="GET">
                 <select name="bloodGroup">
                     <option value="">Select Blood Group</option>
                     <option value="A+">A+</option>
@@ -44,6 +42,7 @@
                     <th>Report</th>
                 </tr>
             </thead>
+            <% if(donors) %>
             <tbody>
                 <% donors.forEach(donor => { %>
                     <tr>
@@ -57,6 +56,5 @@
                 <% }); %>
             </tbody>
         </table>
-    </div>
 </body>
 </html>

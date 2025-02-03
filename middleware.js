@@ -1,5 +1,3 @@
-const Listing = require("./models/listing.js");
-const Review = require("./models/review.js");
 const ExpressError = require("./Utils/ExpressError.js");
 
 // **To check is User is loggedIn or not 

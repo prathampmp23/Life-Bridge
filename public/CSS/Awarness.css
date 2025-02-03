@@ -84,12 +84,14 @@
 }
 
 #info-form {
-  height: 35rem;
-  margin: 2rem;
+  height: 100vh;
+  margin: 4rem;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   border: 4px double red;
   line-height: 2rem;
+  margin-top: 6rem;
 }
 
 .orgcamp-img {
