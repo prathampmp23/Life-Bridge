@@ -17,18 +17,24 @@
     </button>
     <!-- Navigation links -->
     <div class="collapse navbar-collapse navbar-main" id="navbarNavAltMarkup">
-      <div class="navbar-nav ms-auto ">
-        <a class="nav-link main-link" href="/lifeBridge/awareness">Spread Awareness</a>
+      <div class="navbar-nav ms-auto">
+        <a class="nav-link main-link" href="/lifeBridge/awareness"
+          >Spread Awareness</a
+        >
 
-        <a class="nav-link main-link" href="/lifeBridge/findLocation">Find Location</a>
-        <a class="nav-link main-link" href="/lifeBridge/OrganiseCamp">Organise Camp</a>
-      
-     
+        <a class="nav-link main-link" href="/lifeBridge/filtered"
+          >Find Location</a
+        >
+        <a class="nav-link main-link" href="/lifeBridge/OrganiseCamp"
+          >Organise Camp</a
+        >
       </div>
       <div class="navbar-nav ms-auto">
         <!-- If user not Exist -->
         <% if(!currentUser) { %>
-        <a class="nav-link login-btn" href="/lifeBridge/login"><b>LOG IN &nbsp;<i class="fa-solid fa-arrow-right"></i></b></a>
+        <a class="nav-link login-btn" href="/lifeBridge/login"
+          ><b>LOG IN &nbsp;<i class="fa-solid fa-arrow-right"></i></b
+        ></a>
         <% } %>
         <!-- If user Exist -->
         <% if(currentUser) { %>

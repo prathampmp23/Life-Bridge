@@ -7,12 +7,13 @@
   background-size: cover;
   background-position: center;
   border-radius: 16px;
+  padding: 5rem;
 }
 
 #Aware h1 {
-  position: absolute;
+  /* position: absolute; */
   color: white;
-  top: 12rem;
+  /* top: 12rem; */
   font-weight: bolder;
   font-size: 4rem;
   left: 8rem;
@@ -20,27 +21,24 @@
 }
 
 .imgtext {
-  position: absolute;
-  top: 20rem;
+  /* position: absolute; */
+  /* top: 20rem; */
   width: 65vw;
   height: 60vh;
   left: 8rem;
-  font-size: medium;
   font-weight: 400;
   margin-top: 3rem;
-  font-size: 1.5rem;
+  font-size: 1.7rem;
   color: white;
 }
 
 #btn-aware {
   border-radius: 1.2rem;
   background-color: #ff5757;
-  height: 4rem;
+  /* height: 4rem; */
   width: 13rem;
   color: white;
   font-weight: bold;
-  position: absolute;
-  top: 35rem;
   left: 8rem;
   font-size: 2.2rem;
   border: none;
@@ -63,7 +61,7 @@
 }
 
 .text-info {
-  line-height: 1.4rem;
+  line-height: 2rem;
   font-size: 1.3rem;
   margin: 0 3rem;
   color: rgb(25, 25, 25) !important;
@@ -183,20 +181,17 @@
 
 @media (max-width: 450px) {
   #Aware {
-    height: 80vh !important;
+    height: 86vh !important;
+    padding: 2.5rem;
   }
 
   #Aware h1 {
     font-size: 3rem;
     font-size: bold;
-    left: 3rem;
-    top: 10rem;
   }
 
   .imgtext {
     font-size: 1.2rem;
-    left: 3rem;
-    top: 18rem;
     height: 200px;
     width: 80vw;
     line-height: 2rem;
@@ -207,8 +202,6 @@
     width: 9rem;
     font-size: 1.4rem;
     border-radius: 0.8rem;
-    left: 3rem;
-    top: 45rem;
   }
 
   .info-card {
@@ -275,6 +268,7 @@
 }
 
 @media (max-width: 375px) {
+
   #Aware h1 {
     font-size: 1.8rem;
     font-size: bold;

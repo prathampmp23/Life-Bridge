@@ -8,15 +8,12 @@ const path = require("path");
 const methodOverride = require("method-override");
 const ejsMate = require("ejs-mate");
 const ExpressError = require("./Utils/ExpressError.js");
-const wrapAsync = require("./Utils/wrapAsync.js");
 const session = require("express-session");
-const MongoStore = require("connect-mongo");
 const flash = require("connect-flash");
 const passport = require("passport");
 const LocalStrategy = require("passport-local");
 const User = require("./models/user.js");
-const Donor = require("./models/donor.js")
-
+const Donor = require("./models/donor.js");
 
 // Require Express Router
 const userRouter = require("./Routes/user.js");
@@ -49,26 +46,14 @@ main()
 
 // **Connection with MongoDB
 async function main() {
-  await mongoose.connect("mongodb+srv://ashishchoudhari5002:ashish21112004@cluster0.70trs.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0");
+  await mongoose.connect(
+    "mongodb+srv://ashishchoudhari5002:ashish21112004@cluster0.70trs.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+  );
 }
-
-// // **Session store
-// const store = MongoStore.create({
-//   mongoUrl: dbUrl,
-//   crypto: {
-//     secret: process.env.SECRET,
-//   },
-//   touchAfter: 24 * 3600,
-// });
-
-// store.on("error", () => {
-//   console.log("Mongo Session store error", err);
-// });
 
 // **Cookie Session Option
 const sessionOption = {
-  // store,
-  secret: process.env.SECRET || 'Mysupersecretstring',
+  secret: process.env.SECRET || "Mysupersecretstring",
   resave: false,
   saveUninitialized: true,
   cookie: {
@@ -111,37 +96,23 @@ app.use("/lifeBridge", donorRouter);
 app.get("/", (req, res) => {
   res.render("listing/index.ejs");
 });
+
 // Index route
 app.get("/lifeBridge", (req, res) => {
   res.render("listing/index.ejs");
 });
+
 // **Awarness route**
 app.get("/lifeBridge/awareness", (req, res) => {
   res.render("listing/awarness.ejs");
 });
+
 // **Find location route**
-app.get("/lifeBridge/filtered", async(req, res) => {
+app.get("/lifeBridge/filtered", async (req, res) => {
   let query = {};
-  const donors= await Donor.find(query);
-  res.render("listing/filtered.ejs", {donors});
+  const donors = await Donor.find(query);
+  res.render("listing/filtered.ejs", { donors });
 });
-// Route to handle search query
-// app.get("/lifeBridge/findLocation/search", async (req, res) => {
-//   const { bloodGroup, region, district } = req.query;
-//   let query = {};
-
-//   if (bloodGroup) query.bloodGroup = bloodGroup;
-//   if (region) query.region = region;
-//   if (district) query.district = district;
-
-//   try {
-//       const donors = await Donor.find(query); // Fetch donors based on search criteria
-//       res.render("listing/filtered.ejs", { donors });
-//   } catch (error) {
-//     console.log("Received search parameters:", req.query);
-//       res.status(500).send("Error searching donors");
-//   }
-// });
 
 // **Organize camp route**
 app.get("/lifeBridge/OrganiseCamp", (req, res) => {

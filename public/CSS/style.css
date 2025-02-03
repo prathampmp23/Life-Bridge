@@ -835,14 +835,12 @@ section {
 
 .next {
   height: 50PX;
-  width: 50px;
   background: transparent;
   border: NONE;
 }
 
 .prev {
   height: 50PX;
-  width: 50px;
   background: transparent;
   border: NONE;
 }
@@ -862,7 +860,6 @@ section {
 }
 
 .btnnn {
-  width: 20vw;
   border: none;
   font-size: 10px;
   color: #FFF;
@@ -876,7 +873,6 @@ section {
   align-items: center;
   justify-self: center;
   justify-content: space-between;
-  left: 15rem;
 }
 
 
