@@ -7,7 +7,6 @@ const mongoose = require("mongoose");
 const path = require("path");
 const methodOverride = require("method-override");
 const ejsMate = require("ejs-mate");
-const Listing = require("./models/listing.js");
 const ExpressError = require("./Utils/ExpressError.js");
 const wrapAsync = require("./Utils/wrapAsync.js");
 const session = require("express-session");
@@ -20,7 +19,8 @@ const Donor = require("./models/donor.js")
 
 
 // Require Express Router
-const userRouter = require("./Router/user.js");
+const userRouter = require("./Routes/user.js");
+const donorRouter = require("./Routes/donor.js");
 
 // Views folder (To Serve templating files like EJS)
 app.set("view engine", "ejs");
@@ -104,6 +104,8 @@ app.use((req, res, next) => {
 
 // User Router
 app.use("/", userRouter);
+// DONOR ROUTE
+app.use("/lifeBridge", donorRouter);
 
 // **Root route**
 app.get("/", (req, res) => {
@@ -118,26 +120,29 @@ app.get("/lifeBridge/awareness", (req, res) => {
   res.render("listing/awarness.ejs");
 });
 // **Find location route**
-app.get("/lifeBridge/findLocation", (req, res) => {
-  res.render("listing/findLocation.ejs");
+app.get("/lifeBridge/filtered", async(req, res) => {
+  let query = {};
+  const donors= await Donor.find(query);
+  res.render("listing/filtered.ejs", {donors});
 });
 // Route to handle search query
-app.get("/lifeBridge/findLocation/search", async (req, res) => {
-  const { bloodGroup, region, district } = req.query;
-  let query = {};
+// app.get("/lifeBridge/findLocation/search", async (req, res) => {
+//   const { bloodGroup, region, district } = req.query;
+//   let query = {};
 
-  if (bloodGroup) query.bloodGroup = bloodGroup;
-  if (region) query.region = region;
-  if (district) query.district = district;
+//   if (bloodGroup) query.bloodGroup = bloodGroup;
+//   if (region) query.region = region;
+//   if (district) query.district = district;
 
-  try {
-      const donors = await Donor.find(query); // Fetch donors based on search criteria
-      res.render("listing/filtered.ejs", { donors });
-  } catch (error) {
-    console.log("Received search parameters:", req.query);
-      res.status(500).send("Error searching donors");
-  }
-});
+//   try {
+//       const donors = await Donor.find(query); // Fetch donors based on search criteria
+//       res.render("listing/filtered.ejs", { donors });
+//   } catch (error) {
+//     console.log("Received search parameters:", req.query);
+//       res.status(500).send("Error searching donors");
+//   }
+// });
+
 // **Organize camp route**
 app.get("/lifeBridge/OrganiseCamp", (req, res) => {
   res.render("listing/camp.ejs");
