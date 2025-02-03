@@ -145,7 +145,7 @@ app.get("/lifeBridge/filtered", async(req, res) => {
 
 // **Organize camp route**
 app.get("/lifeBridge/OrganiseCamp", (req, res) => {
-  res.render("listing/filtered.ejs");
+  res.render("listing/camp.ejs");
 });
 
 // **Custom ExpressError for "404" Error "page not found"
