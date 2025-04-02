@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .controls {
   text-align: center;
   margin: 20px 0;
@@ -250,3 +251,309 @@ button[type="submit"] {
     margin-bottom: 10px;
   }
 }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 90vh;
+            /* background: linear-gradient(135deg, rgba(255, 77, 77, 0.9), rgba(220, 53, 69, 0.7)), url("../images/save-blood.jpg"); */
+            background-size: cover;
+            background-position: center;
+            border-radius: 0 0 2rem 2rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            overflow: hidden;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        .hero {
+            background-image: url("../images/save blood.svg");
+            background-size: cover;
+            background-position: center;
+            height: 85vh;
+            border-radius: 1rem;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.3);
+            z-index: 1;
+        }
+
+        .front {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2rem;
+            padding: 2rem;
+        }
+
+        #tagLine h1 {
+            font-size: 4.5rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            animation: slideUp 1s ease-out;
+        }
+
+        #tagLine span {
+            color: #ffebeb;
+        }
+
+        .add-camp-btn {
+            background-color: #fff;
+            color: #dc3545;
+            border: none;
+            border-radius: 3rem;
+            padding: 1rem 2.5rem;
+            font-size: 1.25rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .add-camp-btn:hover {
+            background-color: #dc3545;
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Popup Form */
+        .popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(8px);
+            z-index: 1000;
+        }
+
+        .popup-content {
+            background-color: #fff;
+            width: 90%;
+            max-width: 500px;
+            margin: 15vh auto;
+            padding: 2rem;
+            border-radius: 1.5rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            position: relative;
+            animation: popIn 0.5s ease-out;
+        }
+
+        .popup-content h2 {
+            font-size: 1.75rem;
+            color: #dc3545;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .close {
+            position: absolute;
+            top: 1rem;
+            right: 1.5rem;
+            font-size: 2rem;
+            color: #333;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .close:hover {
+            color: #dc3545;
+        }
+
+        .popup-content label {
+            font-size: 1rem;
+            color: #333;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .popup-content input {
+            width: 100%;
+            padding: 0.75rem;
+            margin-bottom: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .popup-content input:focus {
+            outline: none;
+            border-color: #dc3545;
+            box-shadow: 0 0 5px rgba(220, 53, 69, 0.3);
+        }
+
+        button[type="submit"] {
+            background-color: #dc3545;
+            color: white;
+            border: none;
+            border-radius: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.3s ease;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #c82333;
+        }
+
+        /* Upcoming Drives Section */
+        .upcoming {
+            padding: 4rem 2rem;
+            background-color: #fff;
+            text-align: center;
+        }
+
+        .upcoming h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            color: #333;
+        }
+
+        .upcoming span {
+            color: #dc3545;
+        }
+
+        .drive {
+            display: flex;
+            align-items: center;
+            background-color: #f9f9f9;
+            margin: 1.5rem auto;
+            padding: 1.5rem;
+            border-radius: 1rem;
+            max-width: 800px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .drive:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .drive img {
+            width: 200px;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 0.75rem;
+            margin-right: 1.5rem;
+        }
+
+        .details h3 {
+            font-size: 1.5rem;
+            color: #dc3545;
+            margin-bottom: 0.5rem;
+        }
+
+        .details p {
+            font-size: 1rem;
+            color: #555;
+            margin: 0.3rem 0;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideUp {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        @keyframes popIn {
+            from { transform: scale(0.8); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero {
+                height: 70vh;
+            }
+
+            #tagLine h1 {
+                font-size: 3rem;
+            }
+
+            .add-camp-btn {
+                padding: 0.75rem 2rem;
+                font-size: 1rem;
+            }
+
+            .drive {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .drive img {
+                margin-right: 0;
+                margin-bottom: 1rem;
+                width: 100%;
+                max-width: 300px;
+            }
+
+            .popup-content {
+                width: 85%;
+            }
+        }
+
+        @media (max-width: 450px) {
+            .hero {
+                height: 60vh;
+                background-image: linear-gradient(135deg, rgba(255, 77, 77, 0.9), rgba(220, 53, 69, 0.7)), url("../images/save-blood-mobile.jpg");
+            }
+
+            #tagLine h1 {
+                font-size: 2rem;
+            }
+
+            .upcoming h2 {
+                font-size: 1.75rem;
+            }
+
+            .drive img {
+                width: 100%;
+                height: auto;
+            }
+
+            .popup-content {
+                padding: 1.5rem;
+            }
+        }

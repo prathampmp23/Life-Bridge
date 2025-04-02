@@ -40,9 +40,31 @@
   </div>
 </div>
 
+    <section class="upcoming">
+        <h2>Upcoming <span>Blood Donation Drives</span></h2>
 <section class="upcoming">
   <h2>UPCOMING <span>BLOOD DONATION DRIVES</span></h2>
 
+        <div class="drive">
+            <img src="https://via.placeholder.com/200x120?text=Blood+Drive+1" alt="Blood Donation Event">
+            <div class="details">
+                <h3>Priyadarshini College of Engineering</h3>
+                <p><strong>Location:</strong> C.R.P.F., Hingna Road, Nagpur</p>
+                <p><strong>Date:</strong> Jan 20, 2025</p>
+                <p><strong>Time:</strong> 11:00 AM</p>
+            </div>
+        </div>
+
+        <div class="drive">
+            <img src="https://via.placeholder.com/200x120?text=Blood+Drive+2" alt="Blood Donation Event">
+            <div class="details">
+                <h3>ABCD College of Engineering</h3>
+                <p><strong>Location:</strong> Trimurti Nagar, Hingna Road, Nagpur</p>
+                <p><strong>Date:</strong> Jan 20, 2025</p>
+                <p><strong>Time:</strong> 11:00 AM</p>
+            </div>
+        </div>
+    </section>
   <% let currentDate = new Date().toISOString().split("T")[0]; %> <% let
   upcomingCamps = allCamps.filter(camp => camp.date >= currentDate); %> <% let
   completedCamps = allCamps.filter(camp => camp.date < currentDate); %> <% if
@@ -80,3 +102,38 @@
   <% } %>
 </section>
 
+    <script>
+        const openPopup = document.getElementById("openPopup");
+        const popupForm = document.getElementById("popupForm");
+        const closePopup = document.getElementById("closePopup");
+        const detailsForm = document.getElementById("detailsForm");
+
+        openPopup.addEventListener("click", () => {
+            popupForm.style.display = "block";
+        });
+
+        closePopup.addEventListener("click", () => {
+            popupForm.style.display = "none";
+        });
+
+        detailsForm.addEventListener("submit", (event) => {
+            event.preventDefault();
+            const name = document.getElementById("name").value;
+            const place = document.getElementById("place").value;
+            const date = document.getElementById("date").value;
+            const time = document.getElementById("time").value;
+
+            alert(`Camp Submitted!\nName: ${name}\nLocation: ${place}\nDate: ${date}\nTime: ${time}`);
+            popupForm.style.display = "none";
+            detailsForm.reset();
+        });
+
+        // Close popup when clicking outside
+        popupForm.addEventListener("click", (e) => {
+            if (e.target === popupForm) {
+                popupForm.style.display = "none";
+            }
+        });
+    </script>
+</body>
+</html>
