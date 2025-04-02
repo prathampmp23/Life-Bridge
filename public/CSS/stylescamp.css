@@ -1,223 +1,252 @@
-.hero {
-    background-image: url("../images/save blood.jpg");
-    background-size: cover;
-    height: 85vh;
-    border-radius: 1rem;
-    font-size: 40px;
-    font-weight: bold;
+.controls {
+  text-align: center;
+  margin: 20px 0;
 }
 
-#tagLine {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-#tagLine h1 {
-    font-size: 5rem;
-    font-weight: bolder;
-}
-
-.front {
-    display: flex;
-    font-size: 70px;
-    justify-content: space-evenly;
-    align-items: center;
-    height: 100vh;
-    padding: 40px;
+.add-camp-btn,
+.toggle-camps-btn {
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  margin: 5px;
+  border-radius: 8px;
 }
 
 .add-camp-btn {
-    background-color: #f83a3a;
-    color: white;
-    border: none;
-    border-radius: 1rem;
-    padding: 24px 30px;
-    font-size: 1.5rem;
-    cursor: pointer;
-    /* width: 146px; */
+  background-color: red;
+  color: white;
+}
 
+.toggle-camps-btn {
+  background-color: gray;
+  color: white;
+}
+
+.completed {
+  margin-top: 30px;
+}
+
+.completed h2 {
+  text-align: center;
+  width: 100%;
+}
+.hero {
+  background-image: url("../images/save blood.jpg");
+  background-size: cover;
+  height: 85vh;
+  border-radius: 1rem;
+  font-size: 40px;
+  font-weight: bold;
+}
+
+#tagLine {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#tagLine h1 {
+  font-size: 5rem;
+  font-weight: bolder;
+}
+
+.front {
+  display: flex;
+  font-size: 70px;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 100vh;
+  padding: 40px;
+}
+
+.add-camp-btn {
+  background-color: #f83a3a;
+  color: white;
+  border: none;
+  border-radius: 1rem;
+  font-size: 1.5rem;
+  cursor: pointer;
 }
 
 .add-camp-btn:hover {
-    background-color: #f3231b;
+  background-color: #f3231b;
 }
 
 .hero span {
-    color: #ff4d4d;
+  color: #ff4d4d;
 }
 
 .upcoming {
-    padding: 20px;
-    text-align: center;
+  padding: 20px;
+  text-align: center;
 }
 
 .upcoming h2 {
-    font-size: 44px;
-    margin-bottom: 20px;
+  font-size: 44px;
+  margin-bottom: 20px;
 }
 
 .upcoming span {
-    color: #ff4d4d;
+  color: #ff4d4d;
 }
 
 .drive {
-    background-color: white;
-    margin: 20px auto;
-    padding: 15px;
-    border-radius: 8px;
-    max-width: 600px;
-    display: flex;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+  background-color: white;
+  margin: 20px auto;
+  padding: 15px;
+  border-radius: 8px;
+  max-width: 600px;
+  display: flex;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .drive img {
-    width: 150px;
-    height: 100px;
-    border-radius: 5px;
-    margin-right: 15px;
+  width: 150px;
+  height: 100px;
+  border-radius: 5px;
+  margin-right: 15px;
 }
 
 .details {
-    text-align: left;
+  text-align: left;
 }
 
 .details h3 {
-    margin: 0;
-    color: #ff4d4d;
+  margin: 0;
+  color: #ff4d4d;
 }
 
 .details p {
-    margin: 10px 0;
+  margin: 10px 0;
 }
 
 button {
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
 }
 
 #popupForm {
-    haight: 100vh;
+  haight: 100vh;
 }
 
 .popup {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(5px);
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
 }
 
 .popup-content {
-    margin-top: 25vh;
-    background-color: white;
-    font-size: 12px;
-    width: 30vw;
-    padding: 30px;
-    margin: 20px auto;
-    border-radius: 16px;
-    position: relative;
-    top: 25vh;
+  margin-top: 25vh;
+  background-color: white;
+  font-size: 12px;
+  width: 30vw;
+  padding: 30px;
+  margin: 20px auto;
+  border-radius: 16px;
+  position: relative;
+  top: 25vh;
 }
 
 .popup-content input {
-    margin: 10px 0;
-    border-radius: 8px
+  margin: 10px 0;
+  border-radius: 8px;
 }
 
 .close {
-    position: absolute;
-    top: 10px;
-    right: 12px;
-    font-size: 12px;
-    cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  font-size: 12px;
+  cursor: pointer;
 }
 
 input {
-    width: 100%;
-    padding: 8px;
-    margin: 10px 0;
-    display: block;
+  width: 100%;
+  padding: 8px;
+  margin: 10px 0;
+  display: block;
 }
 
 button[type="submit"] {
-    background-color:rgb(246, 43, 80);
-    color: white;
-    border-radius: 8px;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
+  background-color: rgb(246, 43, 80);
+  color: white;
+  border-radius: 8px;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
 }
 .close {
-    font-size: 30px;
+  font-size: 30px;
 }
 
 @media (max-width: 450px) {
-    header {
-        flex-direction: none;
-        text-align: center;
-        height: 10px;
-        width: 80%
-    }
+  header {
+    flex-direction: none;
+    text-align: center;
+    height: 10px;
+    width: 80%;
+  }
 
-    nav {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin-top: 10px;
-    }
+  nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+  }
 
-    nav a {
-        margin: 5px 0;
-    }
+  nav a {
+    margin: 5px 0;
+  }
 
-    .hero {
-        font-size: 24px;
-        padding: 10px;
-    }
-    .hero {
-        background-image: url("../images/save blood.jpg");
-        background-size: cover;
-        height: 30vh;
-        border-radius: 1rem;
-        font-size: 40px;
-        font-weight: bold;
-    }
+  .hero {
+    font-size: 24px;
+    padding: 10px;
+  }
+  .hero {
+    background-image: url("../images/save blood.jpg");
+    background-size: cover;
+    height: 30vh;
+    border-radius: 1rem;
+    font-size: 40px;
+    font-weight: bold;
+  }
 
-    #tagLine h1 {
-        margin-top: -400px;
-        font-size: 3rem;
-        font-weight: bolder;
-    }
+  #tagLine h1 {
+    margin-top: -400px;
+    font-size: 3rem;
+    font-weight: bolder;
+  }
 
-    .front {
-        flex-direction: column;
-        text-align: center;
-        padding: 20px;
-    }
+  .front {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+  }
 
-    .add-camp-btn {
-        margin-left: 0;
-        padding: 10px !important
-    }
+  .add-camp-btn {
+    margin-left: 0;
+    padding: 10px !important;
+  }
 
-    .popup-content  {
-        width: 80vw;
-        padding: 20px;
-    }
+  .popup-content {
+    width: 80vw;
+    padding: 20px;
+  }
 
-    .drive {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
+  .drive {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
 
-    .drive img {
-        margin-right: 0;
-        margin-bottom: 10px;
-    }
+  .drive img {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
 }

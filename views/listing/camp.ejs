@@ -1,82 +1,82 @@
 <% layout("layouts/boilerplate") %>
+
+<!-- Hero Section -->
 <section class="hero">
   <div class="front">
     <div id="tagLine">
       <h1>GIFT <span>BLOOD</span> SAVE LIFE</h1>
-      <button class="add-camp-btn" id="openPopup">Add Camp</button>
-      <div id="popupForm" class="popup">
-        <div class="popup-content">
-          <span class="close" id="closePopup">&times;</span>
-          <h2>Your Camp Details</h2>
-          <form
-            id="detailsForm"
-            action="/lifeBridge/upcommingCamp"
-            method="POST"
-          >
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required />
-
-            <label for="place">Place:</label>
-            <input type="text" id="place" name="place" required />
-
-            <label for="date">Date:</label>
-            <input type="date" id="date" name="date" required />
-
-            <label for="time">Time:</label>
-            <input type="time" id="time" name="time" required />
-
-            <button type="submit">Submit</button>
-          </form>
-        </div>
-      </div>
     </div>
   </div>
 </section>
+
+<!-- Add Camp Button (Placed more appropriately) -->
+<div class="controls">
+  <button class="add-camp-btn" id="openPopup">➕ Add Camp</button>
+  <button class="toggle-camps-btn" id="togglePastCamps">
+    📅 Show Past Camps
+  </button>
+</div>
+
+<!-- Popup Form for Adding a Camp -->
+<div id="popupForm" class="popup">
+  <div class="popup-content">
+    <span class="close" id="closePopup">&times;</span>
+    <h2>Your Camp Details</h2>
+    <form id="detailsForm" action="/lifeBridge/upcommingCamp" method="POST">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required />
+
+      <label for="place">Place:</label>
+      <input type="text" id="place" name="place" required />
+
+      <label for="date">Date:</label>
+      <input type="date" id="date" name="date" required />
+
+      <label for="time">Time:</label>
+      <input type="time" id="time" name="time" required />
+
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+</div>
 
 <section class="upcoming">
   <h2>UPCOMING <span>BLOOD DONATION DRIVES</span></h2>
 
-  <% if(allCamps && allCamps.length > 0) { %> 
-    <% for(let camp of allCamps) { %>
-    <div class="drive">
-      <img src="../images/blood-camp-img.jpg" alt="Blood Donation Event" />
-      <div class="details">
-        <h3><%= camp.name %></h3>
-        <p><strong>Location:</strong> <%= camp.place %></p>
-        <p><strong>Date:</strong> <%= camp.date %></p>
-        <p><strong>Time:</strong> <%= camp.time %></p>
-      </div>
+  <% let currentDate = new Date().toISOString().split("T")[0]; %> <% let
+  upcomingCamps = allCamps.filter(camp => camp.date >= currentDate); %> <% let
+  completedCamps = allCamps.filter(camp => camp.date < currentDate); %> <% if
+  (upcomingCamps.length > 0) { %> <% for (let camp of upcomingCamps) { %>
+  <div class="drive">
+    <img src="../images/blood-camp-img.jpg" alt="Blood Donation Event" />
+    <div class="details">
+      <h3><%= camp.name %></h3>
+      <p><strong>Location:</strong> <%= camp.place %></p>
+      <p><strong>Date:</strong> <%= camp.date %></p>
+      <p><strong>Time:</strong> <%= camp.time %></p>
     </div>
-    <% } %> 
+  </div>
+  <% } %> <% } else { %>
+  <p>No upcoming camps at the moment.</p>
   <% } %>
-
-  <div class="drive">
-    <img src="../images/blood-camp-img.jpg" alt="Blood Donation Event" />
-    <div class="details">
-      <h3>KDK College of Engineering, Nagpur</h3>
-      <p><strong>Location:</strong> Trimurti Nagar, Hingna Road, Nagpur</p>
-      <p><strong>Date:</strong> Jan 20, 2025</p>
-      <p><strong>Time:</strong> 11:00 AM</p>
-    </div>
-  </div>
-
-  <div class="drive">
-    <img src="../images/blood-camp-img.jpg" alt="Blood Donation Event" />
-    <div class="details">
-      <h3>RAI College of Engineering, Nagpur</h3>
-      <p><strong>Location:</strong> Hingna Road, Nagpur</p>
-      <p><strong>Date:</strong> Jan 30, 2025</p>
-      <p><strong>Time:</strong> 11:00 AM</p>
-    </div>
-  </div>
 </section>
 
-<script>
-  document.getElementById("openPopup").addEventListener("click", function () {
-    document.getElementById("popupForm").style.display = "block";
-  });
+<section class="completed" id="pastCampsSection" style="display: none">
+  <h2>COMPLETED <span>BLOOD DONATION CAMPS</span></h2>
 
-  document.getElementById("closePopup").addEventListener("click", function () {
-    document.getElementById("popupForm").style.display = "none";
-  });
-</script>
+  <% if (completedCamps.length > 0) { %> <% for (let camp of completedCamps) {
+  %>
+  <div class="drive">
+    <img src="../images/blood-camp-img.jpg" alt="Blood Donation Event" />
+    <div class="details">
+      <h3><%= camp.name %></h3>
+      <p><strong>Location:</strong> <%= camp.place %></p>
+      <p><strong>Date:</strong> <%= camp.date %></p>
+      <p><strong>Time:</strong> <%= camp.time %></p>
+    </div>
+  </div>
+  <% } %> <% } else { %>
+  <p>No past camps available.</p>
+  <% } %>
+</section>
+
