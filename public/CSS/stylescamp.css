@@ -1,223 +1,306 @@
-.hero {
-    background-image: url("../images/save blood.jpg");
-    background-size: cover;
-    height: 85vh;
-    border-radius: 1rem;
-    font-size: 40px;
-    font-weight: bold;
-}
 
-#tagLine {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
 
-#tagLine h1 {
-    font-size: 5rem;
-    font-weight: bolder;
-}
+        body {
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+        }
 
-.front {
-    display: flex;
-    font-size: 70px;
-    justify-content: space-evenly;
-    align-items: center;
-    height: 100vh;
-    padding: 40px;
-}
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 90vh;
+            /* background: linear-gradient(135deg, rgba(255, 77, 77, 0.9), rgba(220, 53, 69, 0.7)), url("../images/save-blood.jpg"); */
+            background-size: cover;
+            background-position: center;
+            border-radius: 0 0 2rem 2rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            overflow: hidden;
+            animation: fadeIn 1.5s ease-in-out;
+        }
 
-.add-camp-btn {
-    background-color: #f83a3a;
-    color: white;
-    border: none;
-    border-radius: 1rem;
-    padding: 24px 30px;
-    font-size: 1.5rem;
-    cursor: pointer;
-    /* width: 146px; */
+        .hero {
+            background-image: url("../images/save blood.svg");
+            background-size: cover;
+            background-position: center;
+            height: 85vh;
+            border-radius: 1rem;
+        }
 
-}
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.3);
+            z-index: 1;
+        }
 
-.add-camp-btn:hover {
-    background-color: #f3231b;
-}
+        .front {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2rem;
+            padding: 2rem;
+        }
 
-.hero span {
-    color: #ff4d4d;
-}
+        #tagLine h1 {
+            font-size: 4.5rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            animation: slideUp 1s ease-out;
+        }
 
-.upcoming {
-    padding: 20px;
-    text-align: center;
-}
+        #tagLine span {
+            color: #ffebeb;
+        }
 
-.upcoming h2 {
-    font-size: 44px;
-    margin-bottom: 20px;
-}
+        .add-camp-btn {
+            background-color: #fff;
+            color: #dc3545;
+            border: none;
+            border-radius: 3rem;
+            padding: 1rem 2.5rem;
+            font-size: 1.25rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
 
-.upcoming span {
-    color: #ff4d4d;
-}
+        .add-camp-btn:hover {
+            background-color: #dc3545;
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
 
-.drive {
-    background-color: white;
-    margin: 20px auto;
-    padding: 15px;
-    border-radius: 8px;
-    max-width: 600px;
-    display: flex;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
-}
+        /* Popup Form */
+        .popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(8px);
+            z-index: 1000;
+        }
 
-.drive img {
-    width: 150px;
-    height: 100px;
-    border-radius: 5px;
-    margin-right: 15px;
-}
+        .popup-content {
+            background-color: #fff;
+            width: 90%;
+            max-width: 500px;
+            margin: 15vh auto;
+            padding: 2rem;
+            border-radius: 1.5rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            position: relative;
+            animation: popIn 0.5s ease-out;
+        }
 
-.details {
-    text-align: left;
-}
+        .popup-content h2 {
+            font-size: 1.75rem;
+            color: #dc3545;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
 
-.details h3 {
-    margin: 0;
-    color: #ff4d4d;
-}
+        .close {
+            position: absolute;
+            top: 1rem;
+            right: 1.5rem;
+            font-size: 2rem;
+            color: #333;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
 
-.details p {
-    margin: 10px 0;
-}
+        .close:hover {
+            color: #dc3545;
+        }
 
-button {
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-}
+        .popup-content label {
+            font-size: 1rem;
+            color: #333;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
 
-#popupForm {
-    haight: 100vh;
-}
+        .popup-content input {
+            width: 100%;
+            padding: 0.75rem;
+            margin-bottom: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
 
-.popup {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(5px);
-}
+        .popup-content input:focus {
+            outline: none;
+            border-color: #dc3545;
+            box-shadow: 0 0 5px rgba(220, 53, 69, 0.3);
+        }
 
-.popup-content {
-    margin-top: 25vh;
-    background-color: white;
-    font-size: 12px;
-    width: 30vw;
-    padding: 30px;
-    margin: 20px auto;
-    border-radius: 16px;
-    position: relative;
-    top: 25vh;
-}
+        button[type="submit"] {
+            background-color: #dc3545;
+            color: white;
+            border: none;
+            border-radius: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.3s ease;
+        }
 
-.popup-content input {
-    margin: 10px 0;
-    border-radius: 8px
-}
+        button[type="submit"]:hover {
+            background-color: #c82333;
+        }
 
-.close {
-    position: absolute;
-    top: 10px;
-    right: 12px;
-    font-size: 12px;
-    cursor: pointer;
-}
+        /* Upcoming Drives Section */
+        .upcoming {
+            padding: 4rem 2rem;
+            background-color: #fff;
+            text-align: center;
+        }
 
-input {
-    width: 100%;
-    padding: 8px;
-    margin: 10px 0;
-    display: block;
-}
+        .upcoming h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            color: #333;
+        }
 
-button[type="submit"] {
-    background-color:rgb(246, 43, 80);
-    color: white;
-    border-radius: 8px;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-}
-.close {
-    font-size: 30px;
-}
+        .upcoming span {
+            color: #dc3545;
+        }
 
-@media (max-width: 450px) {
-    header {
-        flex-direction: none;
-        text-align: center;
-        height: 10px;
-        width: 80%
-    }
+        .drive {
+            display: flex;
+            align-items: center;
+            background-color: #f9f9f9;
+            margin: 1.5rem auto;
+            padding: 1.5rem;
+            border-radius: 1rem;
+            max-width: 800px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
 
-    nav {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin-top: 10px;
-    }
+        .drive:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.15);
+        }
 
-    nav a {
-        margin: 5px 0;
-    }
+        .drive img {
+            width: 200px;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 0.75rem;
+            margin-right: 1.5rem;
+        }
 
-    .hero {
-        font-size: 24px;
-        padding: 10px;
-    }
-    .hero {
-        background-image: url("../images/save blood.jpg");
-        background-size: cover;
-        height: 30vh;
-        border-radius: 1rem;
-        font-size: 40px;
-        font-weight: bold;
-    }
+        .details h3 {
+            font-size: 1.5rem;
+            color: #dc3545;
+            margin-bottom: 0.5rem;
+        }
 
-    #tagLine h1 {
-        margin-top: -400px;
-        font-size: 3rem;
-        font-weight: bolder;
-    }
+        .details p {
+            font-size: 1rem;
+            color: #555;
+            margin: 0.3rem 0;
+        }
 
-    .front {
-        flex-direction: column;
-        text-align: center;
-        padding: 20px;
-    }
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
 
-    .add-camp-btn {
-        margin-left: 0;
-        padding: 10px !important
-    }
+        @keyframes slideUp {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
 
-    .popup-content  {
-        width: 80vw;
-        padding: 20px;
-    }
+        @keyframes popIn {
+            from { transform: scale(0.8); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
 
-    .drive {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero {
+                height: 70vh;
+            }
 
-    .drive img {
-        margin-right: 0;
-        margin-bottom: 10px;
-    }
-}
+            #tagLine h1 {
+                font-size: 3rem;
+            }
+
+            .add-camp-btn {
+                padding: 0.75rem 2rem;
+                font-size: 1rem;
+            }
+
+            .drive {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .drive img {
+                margin-right: 0;
+                margin-bottom: 1rem;
+                width: 100%;
+                max-width: 300px;
+            }
+
+            .popup-content {
+                width: 85%;
+            }
+        }
+
+        @media (max-width: 450px) {
+            .hero {
+                height: 60vh;
+                background-image: linear-gradient(135deg, rgba(255, 77, 77, 0.9), rgba(220, 53, 69, 0.7)), url("../images/save-blood-mobile.jpg");
+            }
+
+            #tagLine h1 {
+                font-size: 2rem;
+            }
+
+            .upcoming h2 {
+                font-size: 1.75rem;
+            }
+
+            .drive img {
+                width: 100%;
+                height: auto;
+            }
+
+            .popup-content {
+                padding: 1.5rem;
+            }
+        }
