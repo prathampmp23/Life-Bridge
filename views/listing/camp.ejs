@@ -1,87 +1,82 @@
 <% layout("layouts/boilerplate") %>
-<body>
-    <section class="hero ">
-        <div class="front">
-         <div id="tagLine"> 
-          <h1>GIFT <span>BLOOD</span> SAVE LIFE</h1>
-            <button class="add-camp-btn" id="openPopup">Add Camp</button>
-            <div id="popupForm" class="popup">
-                <div class="popup-content">
-                  <span class="close" id="closePopup">&times;</span>
-                  <h2>Your Camp Details</h2>
-                  <form id="detailsForm">
-                    <label for="name">Name:</label>
-                    <input type="text" id="name" name="name" required />
-          
-                    <label for="place">Place:</label>
-                    <input type="text" id="place" name="place" required />
-          
-                    <label for="date">Date:</label>
-                    <input type="date" id="date" name="date" required />
-          
-                    <label for="time">Time:</label>
-                    <input type="time" id="time" name="time" required />
-          
-                    <button type="submit">Submit</button>
-                  </form>
-                </div>
-              </div>
-         </div>
+<section class="hero">
+  <div class="front">
+    <div id="tagLine">
+      <h1>GIFT <span>BLOOD</span> SAVE LIFE</h1>
+      <button class="add-camp-btn" id="openPopup">Add Camp</button>
+      <div id="popupForm" class="popup">
+        <div class="popup-content">
+          <span class="close" id="closePopup">&times;</span>
+          <h2>Your Camp Details</h2>
+          <form
+            id="detailsForm"
+            action="/lifeBridge/upcommingCamp"
+            method="POST"
+          >
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required />
+
+            <label for="place">Place:</label>
+            <input type="text" id="place" name="place" required />
+
+            <label for="date">Date:</label>
+            <input type="date" id="date" name="date" required />
+
+            <label for="time">Time:</label>
+            <input type="time" id="time" name="time" required />
+
+            <button type="submit">Submit</button>
+          </form>
         </div>
-    </section>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <section class="upcoming">
-        <h2>UPCOMING <span>BLOOD DONATION DRIVES</span></h2>
+<section class="upcoming">
+  <h2>UPCOMING <span>BLOOD DONATION DRIVES</span></h2>
 
-        <div class="drive">
-            <img src="drive1.jpg" alt="Blood Donation Event">
-            <div class="details">
-                <h3>Priyadarshini College of Engineering, Nagpur</h3>
-                <p><strong>Location:</strong> C.R.P.F., Hingna Road, Nagpur</p>
-                <p><strong>Date:</strong> Jan 20, 2025</p>
-                <p><strong>Time:</strong> 11:00 AM</p>
-            </div>
-        </div>
+  <% if(allCamps && allCamps.length > 0) { %> 
+    <% for(let camp of allCamps) { %>
+    <div class="drive">
+      <img src="../images/blood-camp-img.jpg" alt="Blood Donation Event" />
+      <div class="details">
+        <h3><%= camp.name %></h3>
+        <p><strong>Location:</strong> <%= camp.place %></p>
+        <p><strong>Date:</strong> <%= camp.date %></p>
+        <p><strong>Time:</strong> <%= camp.time %></p>
+      </div>
+    </div>
+    <% } %> 
+  <% } %>
 
-        <div class="drive">
-            <img src="drive3.jpg" alt="Blood Donation Event">
-            <div class="details">
-                <h3>ABCD College of Engineering, Nagpur</h3>
-                <p><strong>Location:</strong> Trimurti Nagar, Hingna Road, Nagpur</p>
-                <p><strong>Date:</strong> Jan 20, 2025</p>
-                <p><strong>Time:</strong> 11:00 AM</p>
-            </div>
-        </div>
+  <div class="drive">
+    <img src="../images/blood-camp-img.jpg" alt="Blood Donation Event" />
+    <div class="details">
+      <h3>KDK College of Engineering, Nagpur</h3>
+      <p><strong>Location:</strong> Trimurti Nagar, Hingna Road, Nagpur</p>
+      <p><strong>Date:</strong> Jan 20, 2025</p>
+      <p><strong>Time:</strong> 11:00 AM</p>
+    </div>
+  </div>
 
-    </section>
+  <div class="drive">
+    <img src="../images/blood-camp-img.jpg" alt="Blood Donation Event" />
+    <div class="details">
+      <h3>RAI College of Engineering, Nagpur</h3>
+      <p><strong>Location:</strong> Hingna Road, Nagpur</p>
+      <p><strong>Date:</strong> Jan 30, 2025</p>
+      <p><strong>Time:</strong> 11:00 AM</p>
+    </div>
+  </div>
+</section>
 
-</body>
 <script>
-    document.getElementById("openPopup").addEventListener("click", function () {
-      document.getElementById("popupForm").style.display = "block";
-    });
+  document.getElementById("openPopup").addEventListener("click", function () {
+    document.getElementById("popupForm").style.display = "block";
+  });
 
-    document
-      .getElementById("closePopup")
-      .addEventListener("click", function () {
-        document.getElementById("popupForm").style.display = "none";
-      });
-
-    document
-      .getElementById("detailsForm")
-      .addEventListener("submit", function (event) {
-        event.preventDefault();
-
-        let name = document.getElementById("name").value;
-        let place = document.getElementById("place").value;
-        let date = document.getElementById("date").value;
-        let time = document.getElementById("time").value;
-
-        alert(
-          `Details Submitted:\nName: ${name}\nPlace: ${place}\nDate: ${date}\nTime: ${time}`
-        );
-
-        document.getElementById("popupForm").style.display = "none";
-      });
-  </script>
-</body>
+  document.getElementById("closePopup").addEventListener("click", function () {
+    document.getElementById("popupForm").style.display = "none";
+  });
+</script>

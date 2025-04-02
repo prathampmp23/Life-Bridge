@@ -2,12 +2,13 @@
     text-align: center;
     font-size: 2rem;
     margin-top: 20px;
-    color: #333;
+    color: #f14164;
 }
 #map {
-  margin: 100px auto;
-  width: 60%;
-  height: 50vh;
+  margin: 50px auto;
+  width: 700px;
+  height: 400px;
+  border-radius: 16px;
 }
 .marker {
   background-color: #ff0000;
@@ -49,3 +50,12 @@
   background-size: cover;
   /* background-blend-mode: multiply; */
 }
+
+
+@media (max-width: 500px) {
+    #map {
+        width: 80vw !important;
+        height: 40vh !important;
+    }
+  }
+  

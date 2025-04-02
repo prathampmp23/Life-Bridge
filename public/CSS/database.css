@@ -37,7 +37,7 @@ header .login:hover {
     padding: 30px;
     margin: 20px 0;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .search-container h2 {
@@ -57,7 +57,7 @@ header .login:hover {
 .search-container button {
     padding: 12px;
     margin: 10px 0;
-    width: 250px;
+    width: 350px;
     border-radius: 5px;
     border: 1px solid #ddd;
 }
@@ -113,14 +113,18 @@ table .report {
 }
 
 @media (max-width: 450px) {
+    table {
+        width: 90vw;
+    }
     table tr {
-        display: flex;
-        flex-direction: column;
+        /* display: flex; */
+        /* flex-direction: column; */
         text-align-last: start;
         border-bottom: 2px solid black;
+        font-size: 0.45rem;
     }
 
     tr td {
-        display: block;
+        /* display: block; */
     }
 }
