@@ -408,11 +408,11 @@ footer {
 }
 
 .facts {
-  background: #ffeed4;
+  background:rgb(187, 255, 229);
 }
 
 .myths {
-  background: #e8e8e893;
+  background:rgba(249, 196, 196, 0.58);
 }
 
 .box h3 {
@@ -735,7 +735,7 @@ footer {
 .image-content {
   position: relative;
   padding: 25px 0;
-  background-color: #ff385c;
+  background-color:#f7f9fa;
   border-radius: 25px 25px 0 25px;
 }
 
@@ -761,7 +761,7 @@ footer {
   width: 100%;
   object-fit: cover;
   border-radius: 50%;
-  border: 4px solid #ff385c;
+  border: 4px solid rgb(195, 195, 195);
   position: absolute;
   left: -3px;
   top: -2px;
@@ -804,7 +804,7 @@ footer {
   top: 0;
   height: 100%;
   width: 100%;
-  background-color: #ff385c;
+  background-color:#f7f9fa;
   border-radius: 25px 25px 0 25px;
 }
 
@@ -814,7 +814,7 @@ footer {
   position: absolute;
   width: 40px;
   height: 40px;
-  background-color: #ff385c;
+  background-color: #f7f9fa;
 }
 
 .overlay::before {

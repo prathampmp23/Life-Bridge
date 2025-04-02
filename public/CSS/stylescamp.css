@@ -97,25 +97,36 @@ button {
     cursor: pointer;
 }
 
+#popupForm {
+    haight: 100vh;
+}
+
 .popup {
     display: none;
     position: fixed;
-    top: 20px;
+    top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
 }
 
 .popup-content {
-    margin-top: 12rem;
+    margin-top: 25vh;
     background-color: white;
     font-size: 12px;
-    width: 300px;
+    width: 30vw;
     padding: 30px;
     margin: 20px auto;
-    border-radius: 5px;
+    border-radius: 16px;
     position: relative;
+    top: 25vh;
+}
+
+.popup-content input {
+    margin: 10px 0;
+    border-radius: 8px
 }
 
 .close {
@@ -134,11 +145,15 @@ input {
 }
 
 button[type="submit"] {
-    background-color: blue;
+    background-color:rgb(246, 43, 80);
     color: white;
+    border-radius: 8px;
     border: none;
     padding: 10px;
     cursor: pointer;
+}
+.close {
+    font-size: 30px;
 }
 
 @media (max-width: 450px) {
@@ -164,6 +179,20 @@ button[type="submit"] {
         font-size: 24px;
         padding: 10px;
     }
+    .hero {
+        background-image: url("../images/save blood.jpg");
+        background-size: cover;
+        height: 30vh;
+        border-radius: 1rem;
+        font-size: 40px;
+        font-weight: bold;
+    }
+
+    #tagLine h1 {
+        margin-top: -400px;
+        font-size: 3rem;
+        font-weight: bolder;
+    }
 
     .front {
         flex-direction: column;
@@ -173,8 +202,12 @@ button[type="submit"] {
 
     .add-camp-btn {
         margin-left: 0;
-        width: 80%;
-        max-width: 250px;
+        padding: 10px !important
+    }
+
+    .popup-content  {
+        width: 80vw;
+        padding: 20px;
     }
 
     .drive {

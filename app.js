@@ -36,7 +36,7 @@ app.engine("ejs", ejsMate);
 app.use(express.static(path.join(__dirname, "/public")));
 
 // Mongo Atlas Database URL
-const dbUrl = process.env.ATLASDB_URL;
+const dbUrl = process.env.ATLASDB_URL || "mongodb://localhost:27017/lifeBridge"; // Fallback to local DB
 
 main()
   .then(() => {
@@ -46,9 +46,7 @@ main()
 
 // **Connection with MongoDB
 async function main() {
-  await mongoose.connect(
-    "mongodb+srv://ashishchoudhari5002:ashish21112004@cluster0.70trs.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
-  );
+  await mongoose.connect(dbUrl); // Removed deprecated options
 }
 
 // **Cookie Session Option
@@ -111,11 +109,11 @@ app.get("/lifeBridge/awareness", (req, res) => {
 app.get("/lifeBridge/filtered", async (req, res) => {
   let query = {};
   const donors = await Donor.find(query);
-  res.render("listing/filtered.ejs", { donors });
+  res.render("listing/filtered.ejs", { donors ,mapToken: process.env.MAP_TOKEN});
 });
 
 // **Organize camp route**
-app.get("/lifeBridge/OrganiseCamp", (req, res) => {
+app.get("/lifeBridge/upcommingCamp", (req, res) => {
   res.render("listing/camp.ejs");
 });
 
