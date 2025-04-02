@@ -40,7 +40,6 @@ nav {
   height: 3rem;
 }
 
-
 .main-link {
   margin-right: 1rem;
 }
@@ -138,7 +137,6 @@ nav {
   border-radius: 24px;
   box-shadow: 1px 1px 10px rgba(128, 128, 128, 0.469);
   margin-bottom: 100px;
-
 }
 
 .dashboard-content {
@@ -240,7 +238,6 @@ nav {
   color: rgba(0, 0, 0, 0.1);
 }
 
-
 /* Responsive Design */
 @media (max-width: 768px) {
   .benefits-container {
@@ -248,7 +245,6 @@ nav {
     padding: 10px;
   }
 }
-
 
 .btn:hover {
   background: #555;
@@ -408,11 +404,11 @@ footer {
 }
 
 .facts {
-  background:rgb(187, 255, 229);
+  background: rgb(187, 255, 229);
 }
 
 .myths {
-  background:rgba(249, 196, 196, 0.58);
+  background: rgba(249, 196, 196, 0.58);
 }
 
 .box h3 {
@@ -542,7 +538,6 @@ footer {
   }
 }
 
-
 .card .card-img-top {
   animation: animate 1s ease-in-out 0.1s 1 forwards;
 }
@@ -633,7 +628,6 @@ footer {
 }
 
 @media (max-width: 525px) {
-
   #navbarNavAltMarkup .nav-link {
     line-height: 1.7rem;
     font-size: 15px;
@@ -666,7 +660,6 @@ footer {
     margin-top: -28px;
   }
 
-
   .testimonial-text {
     margin-top: 50px;
   }
@@ -687,7 +680,6 @@ footer {
     padding: 30px 10px;
   }
 
-
   svg {
     height: 50px;
     width: 50px;
@@ -696,7 +688,6 @@ footer {
   .alert h4 {
     font-size: 15px;
   }
-
 }
 
 .add {
@@ -724,18 +715,17 @@ footer {
 .card1 {
   width: 310px;
   margin: 20px;
-  background-color: #FFF;
+  background-color: #fff;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
   border-radius: 25px;
   flex-shrink: 0;
-
 }
 
 .image-content {
   position: relative;
   padding: 25px 0;
-  background-color:#f7f9fa;
+  background-color: #f7f9fa;
   border-radius: 25px 25px 0 25px;
 }
 
@@ -751,7 +741,7 @@ footer {
   position: relative;
   height: 150px;
   width: 150px;
-  background: #FFF;
+  background: #fff;
   padding: 3px;
   margin: auto;
 }
@@ -784,7 +774,7 @@ footer {
 .button {
   border: none;
   font-size: 16px;
-  color: #FFF;
+  color: #fff;
   padding: 8px 16px;
   background-color: #ff385c;
   border-radius: 6px;
@@ -804,13 +794,13 @@ footer {
   top: 0;
   height: 100%;
   width: 100%;
-  background-color:#f7f9fa;
+  background-color: #f7f9fa;
   border-radius: 25px 25px 0 25px;
 }
 
 .overlay::before,
 .overlay::after {
-  content: '';
+  content: "";
   position: absolute;
   width: 40px;
   height: 40px;
@@ -834,13 +824,13 @@ section {
 }
 
 .next {
-  height: 50PX;
+  height: 50px;
   background: transparent;
   border: NONE;
 }
 
 .prev {
-  height: 50PX;
+  height: 50px;
   background: transparent;
   border: NONE;
 }
@@ -849,7 +839,6 @@ section {
   font-size: 2rem;
   content: "\3e";
   z-index: 20;
-
 }
 
 .fa-less-than {
@@ -862,7 +851,7 @@ section {
 .btnnn {
   border: none;
   font-size: 10px;
-  color: #FFF;
+  color: #fff;
   padding: 3px 8px;
   background-color: #ff385c;
   border-radius: 16px;
@@ -875,6 +864,64 @@ section {
   justify-content: space-between;
 }
 
+/* FAQ */
+.faq-container {
+  width: 80%;
+  margin: 20px auto;
+}
+
+.faq-item {
+  background-color: #fff;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.faq-question {
+  padding: 15px;
+  cursor: pointer;
+  position: relative;
+  font-weight: bold;
+}
+
+.faq-answer {
+  padding: 0 15px;
+  margin-bottom: 15px;
+  line-height: 1.6;
+  display: none;
+}
+
+.faq-question::after {
+  content: "+";
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 20px;
+}
+
+.faq-item.active .faq-answer {
+  display: block;
+}
+
+.faq-item.active .faq-question::after {
+  content: "-";
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .faq-container {
+    width: 95%;
+  }
+
+  .faq-question {
+    padding: 10px;
+  }
+
+  .faq-answer {
+    padding: 0 10px;
+  }
+}
 
 @media (max-width: 700px) {
   .slider-container {

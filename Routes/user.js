@@ -8,17 +8,17 @@ const { saveRedirectUrl } = require("../middleware");
 const userController = require("../controllers/users.js");
 
 router
-  .route("/lifeBridge/signup")
+  .route("/signup")
   .get(userController.rendersignUpForm)
   .post(wrapAsync(userController.signUp));
 
 router
-  .route("/lifeBridge/login")
+  .route("/login")
   .get(userController.renderLoginForm)
   .post(
     saveRedirectUrl,
     passport.authenticate("local", {
-      failureRedirect: "/lifeBridge/login",
+      failureRedirect: "/login",
       failureFlash: true,
     }),
     userController.login

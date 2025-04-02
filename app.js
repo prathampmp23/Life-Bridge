@@ -14,6 +14,7 @@ const passport = require("passport");
 const LocalStrategy = require("passport-local");
 const User = require("./models/user.js");
 const Donor = require("./models/donor.js");
+const Camp = require("./models/donor.js");
 
 // Require Express Router
 const userRouter = require("./Routes/user.js");
@@ -36,7 +37,7 @@ app.engine("ejs", ejsMate);
 app.use(express.static(path.join(__dirname, "/public")));
 
 // Mongo Atlas Database URL
-const dbUrl = process.env.ATLASDB_URL || "mongodb://localhost:27017/lifeBridge"; // Fallback to local DB
+const dbUrl = process.env.ATLASDB_URL; // || "mongodb://localhost:27017/lifeBridge";
 
 main()
   .then(() => {
@@ -109,13 +110,17 @@ app.get("/lifeBridge/awareness", (req, res) => {
 app.get("/lifeBridge/filtered", async (req, res) => {
   let query = {};
   const donors = await Donor.find(query);
-  res.render("listing/filtered.ejs", { donors ,mapToken: process.env.MAP_TOKEN});
+  res.render("listing/filtered.ejs", {
+    donors,
+    mapToken: process.env.MAP_TOKEN,
+  });
 });
 
 // **Organize camp route**
-app.get("/lifeBridge/upcommingCamp", (req, res) => {
-  res.render("listing/camp.ejs");
-});
+// app.get("/lifeBridge/upcommingCamp", async (req, res) => {
+//   const upcommingCamp = await Camp.find();
+//   res.render("listing/camp.ejs", { upcommingCamp });
+// });
 
 // **Custom ExpressError for "404" Error "page not found"
 app.all("*", (req, res, next) => {

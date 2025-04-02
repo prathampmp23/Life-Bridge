@@ -1,46 +1,49 @@
 <% layout("layouts/boilerplate") %>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Save Lives - Blood Donation</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-</head>
-<body>
-    <section class="hero">
-        <div class="front">
-            <div id="tagLine">
-                <h1>Donate <span>Blood</span>, Save <span>Lives</span></h1>
-                <button class="add-camp-btn" id="openPopup">Add Donation Camp</button>
-            </div>
-            <div id="popupForm" class="popup">
-                <div class="popup-content">
-                    <span class="close" id="closePopup">&times;</span>
-                    <h2>Add Your Blood Donation Camp</h2>
-                    <form id="detailsForm">
-                        <label for="name">Camp Name:</label>
-                        <input type="text" id="name" name="name" placeholder="e.g., Annual Blood Drive" required />
 
-                        <label for="place">Location:</label>
-                        <input type="text" id="place" name="place" placeholder="e.g., Hingna Road, Nagpur" required />
+<!-- Hero Section -->
+<section class="hero">
+  <div class="front">
+    <div id="tagLine">
+      <h1>GIFT <span>BLOOD</span> SAVE LIFE</h1>
+    </div>
+  </div>
+</section>
 
-                        <label for="date">Date:</label>
-                        <input type="date" id="date" name="date" required />
+<!-- Add Camp Button (Placed more appropriately) -->
+<div class="controls">
+  <button class="add-camp-btn" id="openPopup">➕ Add Camp</button>
+  <button class="toggle-camps-btn" id="togglePastCamps">
+    📅 Show Past Camps
+  </button>
+</div>
 
-                        <label for="time">Time:</label>
-                        <input type="time" id="time" name="time" required />
+<!-- Popup Form for Adding a Camp -->
+<div id="popupForm" class="popup">
+  <div class="popup-content">
+    <span class="close" id="closePopup">&times;</span>
+    <h2>Your Camp Details</h2>
+    <form id="detailsForm" action="/lifeBridge/upcommingCamp" method="POST">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required />
 
-                        <button type="submit">Submit Camp</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
+      <label for="place">Place:</label>
+      <input type="text" id="place" name="place" required />
+
+      <label for="date">Date:</label>
+      <input type="date" id="date" name="date" required />
+
+      <label for="time">Time:</label>
+      <input type="time" id="time" name="time" required />
+
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+</div>
 
     <section class="upcoming">
         <h2>Upcoming <span>Blood Donation Drives</span></h2>
+<section class="upcoming">
+  <h2>UPCOMING <span>BLOOD DONATION DRIVES</span></h2>
 
         <div class="drive">
             <img src="https://via.placeholder.com/200x120?text=Blood+Drive+1" alt="Blood Donation Event">
@@ -62,6 +65,42 @@
             </div>
         </div>
     </section>
+  <% let currentDate = new Date().toISOString().split("T")[0]; %> <% let
+  upcomingCamps = allCamps.filter(camp => camp.date >= currentDate); %> <% let
+  completedCamps = allCamps.filter(camp => camp.date < currentDate); %> <% if
+  (upcomingCamps.length > 0) { %> <% for (let camp of upcomingCamps) { %>
+  <div class="drive">
+    <img src="../images/blood-camp-img.jpg" alt="Blood Donation Event" />
+    <div class="details">
+      <h3><%= camp.name %></h3>
+      <p><strong>Location:</strong> <%= camp.place %></p>
+      <p><strong>Date:</strong> <%= camp.date %></p>
+      <p><strong>Time:</strong> <%= camp.time %></p>
+    </div>
+  </div>
+  <% } %> <% } else { %>
+  <p>No upcoming camps at the moment.</p>
+  <% } %>
+</section>
+
+<section class="completed" id="pastCampsSection" style="display: none">
+  <h2>COMPLETED <span>BLOOD DONATION CAMPS</span></h2>
+
+  <% if (completedCamps.length > 0) { %> <% for (let camp of completedCamps) {
+  %>
+  <div class="drive">
+    <img src="../images/blood-camp-img.jpg" alt="Blood Donation Event" />
+    <div class="details">
+      <h3><%= camp.name %></h3>
+      <p><strong>Location:</strong> <%= camp.place %></p>
+      <p><strong>Date:</strong> <%= camp.date %></p>
+      <p><strong>Time:</strong> <%= camp.time %></p>
+    </div>
+  </div>
+  <% } %> <% } else { %>
+  <p>No past camps available.</p>
+  <% } %>
+</section>
 
     <script>
         const openPopup = document.getElementById("openPopup");

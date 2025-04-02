@@ -20,7 +20,7 @@ module.exports.signUp = async (req, res) => {
     });
   } catch (err) {
     req.flash("error", err.message);
-    res.redirect("/lifeBridge/signup");
+    res.redirect("/signup");
   }
 };
 
