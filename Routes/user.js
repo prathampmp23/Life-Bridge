@@ -3,7 +3,7 @@ const router = express.Router({ mergeParams: true });
 const User = require("../models/user");
 const wrapAsync = require("../Utils/wrapAsync");
 const passport = require("passport");
-const { saveRedirectUrl } = require("../middleware");
+const { saveRedirectUrl, isLoggedIn } = require("../middleware");
 
 const userController = require("../controllers/users.js");
 
@@ -23,6 +23,9 @@ router
     }),
     userController.login
   );
+
+  // New route for user dashboard
+router.get("/lifeBridge/user/dashboard", isLoggedIn, wrapAsync(userController.renderDashboard));
 
 router.get("/logout", userController.logout);
 

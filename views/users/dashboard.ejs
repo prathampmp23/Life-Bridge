@@ -1,0 +1,168 @@
+<% layout("layouts/boilerplate") %>
+
+<div class="dashboard-container">
+  <!-- User Profile Header -->
+  <div class="user-profile-header">
+    <div class="profile-info">
+      <div class="profile-avatar">
+        <i class="fa-solid fa-user-circle"></i>
+      </div>
+      <div class="profile-details">
+        <h1>Welcome, <%= currentUser.username %></h1>
+        <p><i class="fa-solid fa-envelope"></i> <%= currentUser.email %></p>
+      </div>
+    </div>
+    <div class="profile-actions">
+      <a href="/lifeBridge/user/profile/edit" class="btn btn-outline-dark">
+        <i class="fa-solid fa-pencil"></i> Edit Profile
+      </a>
+    </div>
+  </div>
+
+  <!-- Dashboard Stats -->
+  <div class="dashboard-stats">
+    <div class="stat-card">
+      <div class="stat-icon">
+        <i class="fa-solid fa-droplet"></i>
+      </div>
+      <div class="stat-info">
+        <h3>0</h3>
+        <p>Donations</p>
+      </div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-icon">
+        <i class="fa-solid fa-calendar-check"></i>
+      </div>
+      <div class="stat-info">
+        <h3>0</h3>
+        <p>Camps Attended</p>
+      </div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-icon">
+        <i class="fa-solid fa-users"></i>
+      </div>
+      <div class="stat-info">
+        <h3>0</h3>
+        <p>Lives Impacted</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Quick Actions -->
+  <div class="quick-actions">
+    <h2>Quick Actions</h2>
+    <div class="action-buttons">
+      <a href="/lifeBridge/filtered" class="action-btn">
+        <i class="fa-solid fa-location-dot"></i>
+        <span>Find Blood</span>
+      </a>
+      <a href="/lifeBridge/user/donate" class="action-btn">
+        <i class="fa-solid fa-hand-holding-heart"></i>
+        <span>Register to Donate</span>
+      </a>
+      <a href="/lifeBridge/upcommingCamp" class="action-btn">
+        <i class="fa-solid fa-calendar-days"></i>
+        <span>Upcoming Camps</span>
+      </a>
+      <a href="/lifeBridge/awareness" class="action-btn">
+        <i class="fa-solid fa-bullhorn"></i>
+        <span>Spread Awareness</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- User's Donation History (if any) -->
+  <div class="donation-history">
+    <h2>My Donation History</h2>
+    <% if (donations && donations.length > 0) { %>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Location</th>
+            <th>Blood Group</th>
+            <th>Units</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% donations.forEach(donation => { %>
+            <tr>
+              <td><%= donation.date %></td>
+              <td><%= donation.location %></td>
+              <td><%= donation.bloodGroup %></td>
+              <td><%= donation.units %></td>
+            </tr>
+          <% }); %>
+        </tbody>
+      </table>
+    <% } else { %>
+      <div class="no-records">
+        <p>You haven't made any donations yet.</p>
+        <a href="/lifeBridge/user/donate" class="btn btn-primary">Register to Donate</a>
+      </div>
+    <% } %>
+  </div>
+
+  <!-- Upcoming Camps Section -->
+  <div class="upcoming-camps">
+    <h2>Upcoming Blood Donation Camps</h2>
+    <div class="camps-list">
+      <% if (upcomingCamps && upcomingCamps.length > 0) { %>
+        <% upcomingCamps.slice(0, 3).forEach(camp => { %>
+          <div class="camp-card">
+            <div class="camp-date">
+              <span class="day"><%= new Date(camp.date).getDate() %></span>
+              <span class="month"><%= new Date(camp.date).toLocaleString('default', { month: 'short' }) %></span>
+            </div>
+            <div class="camp-details">
+              <h3><%= camp.name %></h3>
+              <p><i class="fa-solid fa-location-dot"></i> <%= camp.place %></p>
+              <p><i class="fa-solid fa-clock"></i> <%= camp.time %></p>
+            </div>
+            <a href="/lifeBridge/camp/<%= camp._id %>/register" class="btn btn-sm btn-primary">Register</a>
+          </div>
+        <% }); %>
+        <% if (upcomingCamps.length > 3) { %>
+          <div class="view-more">
+            <a href="/lifeBridge/upcommingCamp">View All Camps</a>
+          </div>
+        <% } %>
+      <% } else { %>
+        <p>No upcoming camps at the moment.</p>
+      <% } %>
+    </div>
+  </div>
+
+  <!-- Blood Requirements Section -->
+  <div class="blood-requirements">
+    <h2>Urgent Blood Requirements</h2>
+    <div class="requirements-cards">
+      <div class="requirement-card urgent">
+        <div class="blood-group">A+</div>
+        <div class="requirement-details">
+          <p>Required at: City Hospital</p>
+          <p>Contact: 987-654-3210</p>
+        </div>
+        <a href="tel:9876543210" class="btn btn-sm btn-danger">Call</a>
+      </div>
+      <div class="requirement-card">
+        <div class="blood-group">O-</div>
+        <div class="requirement-details">
+          <p>Required at: Memorial Hospital</p>
+          <p>Contact: 987-654-3211</p>
+        </div>
+        <a href="tel:9876543211" class="btn btn-sm btn-danger">Call</a>
+      </div>
+      <div class="requirement-card">
+        <div class="blood-group">B+</div>
+        <div class="requirement-details">
+          <p>Required at: General Hospital</p>
+          <p>Contact: 987-654-3212</p>
+        </div>
+        <a href="tel:9876543212" class="btn btn-sm btn-danger">Call</a>
+      </div>
+    </div>
+  </div>
+</div>

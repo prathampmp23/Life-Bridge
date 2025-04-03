@@ -12,9 +12,7 @@
 <!-- Add Camp Button (Placed more appropriately) -->
 <div class="controls">
   <button class="add-camp-btn" id="openPopup">➕ Add Camp</button>
-  <button class="toggle-camps-btn" id="togglePastCamps">
-    📅 Show Past Camps
-  </button>
+  <button class="toggle-camps-btn" id="togglePastCamps">📅 Show Past Camps</button>
 </div>
 
 <!-- Popup Form for Adding a Camp -->
@@ -40,100 +38,48 @@
   </div>
 </div>
 
-    <section class="upcoming">
-        <h2>Upcoming <span>Blood Donation Drives</span></h2>
+<!-- Section for Upcoming Camps -->
 <section class="upcoming">
   <h2>UPCOMING <span>BLOOD DONATION DRIVES</span></h2>
 
-        <div class="drive">
-            <img src="https://via.placeholder.com/200x120?text=Blood+Drive+1" alt="Blood Donation Event">
-            <div class="details">
-                <h3>Priyadarshini College of Engineering</h3>
-                <p><strong>Location:</strong> C.R.P.F., Hingna Road, Nagpur</p>
-                <p><strong>Date:</strong> Jan 20, 2025</p>
-                <p><strong>Time:</strong> 11:00 AM</p>
-            </div>
-        </div>
+  <% let currentDate = new Date().toISOString().split("T")[0]; %>
+  <% let upcomingCamps = allCamps.filter(camp => camp.date >= currentDate); %>
+  <% let completedCamps = allCamps.filter(camp => camp.date < currentDate); %>
 
-        <div class="drive">
-            <img src="https://via.placeholder.com/200x120?text=Blood+Drive+2" alt="Blood Donation Event">
-            <div class="details">
-                <h3>ABCD College of Engineering</h3>
-                <p><strong>Location:</strong> Trimurti Nagar, Hingna Road, Nagpur</p>
-                <p><strong>Date:</strong> Jan 20, 2025</p>
-                <p><strong>Time:</strong> 11:00 AM</p>
-            </div>
+  <% if (upcomingCamps.length > 0) { %> 
+    <% for (let camp of upcomingCamps) { %>
+      <div class="drive">
+        <img src="../images/blood-camp-img.jpg" alt="Blood Donation Event" />
+        <div class="details">
+          <h3><%= camp.name %></h3>
+          <p><strong>Location:</strong> <%= camp.place %></p>
+          <p><strong>Date:</strong> <%= camp.date %></p>
+          <p><strong>Time:</strong> <%= camp.time %></p>
         </div>
-    </section>
-  <% let currentDate = new Date().toISOString().split("T")[0]; %> <% let
-  upcomingCamps = allCamps.filter(camp => camp.date >= currentDate); %> <% let
-  completedCamps = allCamps.filter(camp => camp.date < currentDate); %> <% if
-  (upcomingCamps.length > 0) { %> <% for (let camp of upcomingCamps) { %>
-  <div class="drive">
-    <img src="../images/blood-camp-img.jpg" alt="Blood Donation Event" />
-    <div class="details">
-      <h3><%= camp.name %></h3>
-      <p><strong>Location:</strong> <%= camp.place %></p>
-      <p><strong>Date:</strong> <%= camp.date %></p>
-      <p><strong>Time:</strong> <%= camp.time %></p>
-    </div>
-  </div>
-  <% } %> <% } else { %>
-  <p>No upcoming camps at the moment.</p>
+      </div>
+    <% } %> 
+  <% } else { %>
+    <p>No upcoming camps at the moment.</p>
   <% } %>
 </section>
 
-<section class="completed" id="pastCampsSection" style="display: none">
+<!-- Section for Completed Camps (Initially Hidden) -->
+<section class="completed" id="pastCampsSection" style="display: none;">
   <h2>COMPLETED <span>BLOOD DONATION CAMPS</span></h2>
 
-  <% if (completedCamps.length > 0) { %> <% for (let camp of completedCamps) {
-  %>
-  <div class="drive">
-    <img src="../images/blood-camp-img.jpg" alt="Blood Donation Event" />
-    <div class="details">
-      <h3><%= camp.name %></h3>
-      <p><strong>Location:</strong> <%= camp.place %></p>
-      <p><strong>Date:</strong> <%= camp.date %></p>
-      <p><strong>Time:</strong> <%= camp.time %></p>
-    </div>
-  </div>
-  <% } %> <% } else { %>
-  <p>No past camps available.</p>
+  <% if (completedCamps.length > 0) { %> 
+    <% for (let camp of completedCamps) { %>
+      <div class="drive">
+        <img src="../images/blood-camp-img.jpg" alt="Blood Donation Event" />
+        <div class="details">
+          <h3><%= camp.name %></h3>
+          <p><strong>Location:</strong> <%= camp.place %></p>
+          <p><strong>Date:</strong> <%= camp.date %></p>
+          <p><strong>Time:</strong> <%= camp.time %></p>
+        </div>
+      </div>
+    <% } %> 
+  <% } else { %>
+    <p>No past camps available.</p>
   <% } %>
 </section>
-
-    <script>
-        const openPopup = document.getElementById("openPopup");
-        const popupForm = document.getElementById("popupForm");
-        const closePopup = document.getElementById("closePopup");
-        const detailsForm = document.getElementById("detailsForm");
-
-        openPopup.addEventListener("click", () => {
-            popupForm.style.display = "block";
-        });
-
-        closePopup.addEventListener("click", () => {
-            popupForm.style.display = "none";
-        });
-
-        detailsForm.addEventListener("submit", (event) => {
-            event.preventDefault();
-            const name = document.getElementById("name").value;
-            const place = document.getElementById("place").value;
-            const date = document.getElementById("date").value;
-            const time = document.getElementById("time").value;
-
-            alert(`Camp Submitted!\nName: ${name}\nLocation: ${place}\nDate: ${date}\nTime: ${time}`);
-            popupForm.style.display = "none";
-            detailsForm.reset();
-        });
-
-        // Close popup when clicking outside
-        popupForm.addEventListener("click", (e) => {
-            if (e.target === popupForm) {
-                popupForm.style.display = "none";
-            }
-        });
-    </script>
-</body>
-</html>

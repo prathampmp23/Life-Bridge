@@ -18,6 +18,7 @@ module.exports.renderDonorDB = async (req, res) => {
   }
 };
 
+
 module.exports.renderCampForm = async (req, res) => {
   try {
     const allCamps = await Camp.find(); // Fetch all camps from the database
@@ -28,6 +29,7 @@ module.exports.renderCampForm = async (req, res) => {
   }
 };
 
+
 module.exports.addCamp = async (req, res) => {
   try {
     let { name, place, date, time } = req.body;
@@ -37,7 +39,7 @@ module.exports.addCamp = async (req, res) => {
     const allCamps = await Camp.find();
     console.log(allCamps);
     req.flash("success", "Your Upcoming Camp Added Successfully!");
-    res.redirect("/lifeBridge/", { allCamps });
+    res.redirect("/lifeBridge/");
   } catch (err) {
     req.flash("error", err.message);
     res.redirect("/lifeBridge/upcommingCamp");
