@@ -24,7 +24,7 @@ module.exports.renderCampForm = async (req, res) => {
     const allCamps = await Camp.find(); // Fetch all camps from the database
     res.render("listing/camp.ejs", { allCamps }); // Pass allCamps to EJS
   } catch (error) {
-    console.error("Error fetching camps:", error);
+    console.error("Error while fetching camps:", error);
     res.status(500).send("Error loading camps");
   }
 };
@@ -43,5 +43,14 @@ module.exports.addCamp = async (req, res) => {
   } catch (err) {
     req.flash("error", err.message);
     res.redirect("/lifeBridge/upcommingCamp");
+  }
+};
+
+module.exports.renderCommunity = async (req, res) => {
+  try {
+    res.render("listing/community.ejs"); // Pass allCamps to EJS
+  } catch (error) {
+    console.error("Error while fetching community:", error);
+    res.status(500).send("Error loading camps");
   }
 };

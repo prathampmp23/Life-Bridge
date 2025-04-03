@@ -1,0 +1,259 @@
+<% layout("layouts/boilerplate") %>
+
+<body>
+  <div class="header">
+    <div class="header-content">
+      <h1>Blood Donation Community</h1>
+      <div class="header-content">
+        <ul>
+          <li><a href="#learn">Learn About Donation</a></li>
+          <li><a href="#donation-types">Donation Types</a></li>
+          <li><a href="#blogs">Community Blog</a></li>
+          <li><a href="#videos">Videos</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <!-- Learn About Blood Donation Section -->
+    <section id="learn" class="section">
+      <h2>Learn About Blood Donation</h2>
+      <p>
+        Blood donation is a life-saving act that helps patients in need of blood
+        transfusions. Every donation can save up to three lives, making it a
+        powerful way to contribute to society.
+      </p>
+      <p>
+        When you donate blood, you're helping accident victims, surgical
+        patients, and those battling various medical conditions. The process is
+        safe, simple, and typically takes less than an hour of your time.
+      </p>
+      <img
+        src="../images/donationFact.jpg"
+        alt="Blood Donation Fact"
+        class="img"
+      />
+    </section>
+
+    <!-- Types of Blood Donation -->
+    <section id="donation-types">
+      <h2>Types of Blood Donation</h2>
+      <div class="donation-types-container">
+        <!-- Whole Blood Donation -->
+        <div class="donation-type">
+          <h3>Whole Blood Donation</h3>
+          <p>
+            <strong>What it is:</strong> The most common type of donation, where
+            approximately 1 pint (about 470 ml) of whole blood is collected.
+          </p>
+          <p>
+            <strong>Uses:</strong> Used for trauma patients, surgeries, and
+            anemia treatment.
+          </p>
+          <p>
+            <strong>Eligibility:</strong> Donors can give every 56 days (8
+            weeks).
+          </p>
+        </div>
+
+        <!-- Platelet Donation -->
+        <div class="donation-type">
+          <h3>Platelet Donation</h3>
+          <p>
+            <strong>What it is:</strong> Only platelets are collected, while red
+            blood cells and plasma are returned to the donor.
+          </p>
+          <p>
+            <strong>Uses:</strong> Helps cancer patients, those undergoing organ
+            transplants, and individuals with blood disorders.
+          </p>
+          <p>
+            <strong>Eligibility:</strong> Donors can give every 7 days, up to 24
+            times a year.
+          </p>
+        </div>
+
+        <!-- Plasma Donation -->
+        <div class="donation-type">
+          <h3>Plasma Donation</h3>
+          <p>
+            <strong>What it is:</strong> Plasma is separated and collected,
+            while red blood cells and platelets are returned to the donor.
+          </p>
+          <p>
+            <strong>Uses:</strong> Helps burn victims, patients with clotting
+            disorders, and those with immune deficiencies.
+          </p>
+          <p>
+            <strong>Eligibility:</strong> Donors can give every 28 days (up to
+            13 times a year).
+          </p>
+        </div>
+
+        <!-- Double Red Cell Donation -->
+        <div class="donation-type">
+          <h3>Double Red Cell Donation</h3>
+          <p>
+            <strong>What it is:</strong> Two units of red blood cells are
+            collected while returning plasma and platelets to the donor.
+          </p>
+          <p>
+            <strong>Uses:</strong> Critical for trauma patients, surgeries, and
+            those with blood disorders.
+          </p>
+          <p>
+            <strong>Eligibility:</strong> Male donors can give every 112 days,
+            females every 168 days.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Community Blog Section -->
+    <section id="blogs">
+      <h2>Community Blog</h2>
+      <p>
+        Share your blood donation experience or read stories from other donors
+        and recipients. Your story might inspire someone else to donate!
+      </p>
+
+      <!-- Post Story Form -->
+      <div id="post-story-section">
+        <textarea
+          id="story-input"
+          class="textarea"
+          placeholder="Write your story or experience with blood donation..."
+        ></textarea>
+        <button id="post-button" onclick="submitStory()" class="button">
+          Post Story
+        </button>
+      </div>
+
+      <!-- User Posts Container -->
+      <div id="user-posts" class="user-posts">
+        <!-- Posts will be added here via JavaScript -->
+      </div>
+    </section>
+
+    <!-- Videos Section -->
+    <section id="videos">
+      <h2>Educational Videos About Blood Donation</h2>
+      <div class="video-container">
+        <div class="video-item">
+          <div class="video-wrapper">
+            <iframe
+              src="https://www.youtube.com/embed/E9QxiGPwab4"
+              allowfullscreen
+            ></iframe>
+          </div>
+          <div class="video-info">
+            <h4>The Importance of Blood Donation</h4>
+            <p>
+              Learn why blood donation matters and how it saves lives every day.
+            </p>
+          </div>
+        </div>
+
+        <div class="video-item">
+          <div class="video-wrapper">
+            <iframe
+              src="https://www.youtube.com/embed/kOISEM6L4xk"
+              allowfullscreen
+            ></iframe>
+          </div>
+          <div class="video-info">
+            <h4>Blood Donation Process Explained</h4>
+            <p>
+              A step-by-step walkthrough of what happens when you donate blood.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq">
+      <h2>Frequently Asked Questions (FAQ)</h2>
+      <!-- Dropdown FAQ Items -->
+      <div class="faq-items">
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleAnswer('answer1')">
+            Why should I donate blood?
+          </button>
+          <div id="answer1" class="faq-answer">
+            <p>
+              Donating blood saves lives and helps patients in critical need.
+              One donation can save up to three lives. It also has health
+              benefits for the donor, including reduced risk of certain health
+              conditions and free health screening.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleAnswer('answer2')">
+            Who can donate blood?
+          </button>
+          <div id="answer2" class="faq-answer">
+            <p>
+              Most healthy individuals aged between 18 and 65 years can donate
+              blood, provided they meet eligibility criteria such as minimum
+              weight (typically around 110 pounds/50 kg) and pass a basic health
+              screening. Specific requirements may vary by country and donation
+              center.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleAnswer('answer3')">
+            Is donating blood safe?
+          </button>
+          <div id="answer3" class="faq-answer">
+            <p>
+              Yes, donating blood is very safe. All equipment used is sterile
+              and disposed of after a single use. The donation process is
+              conducted by trained professionals in clean environments. The
+              average adult has about 10 pints of blood, and donating just 1
+              pint is well within safe limits.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleAnswer('answer4')">
+            How often can I donate blood?
+          </button>
+          <div id="answer4" class="faq-answer">
+            <p>
+              Donation frequency depends on the type of donation:<br />
+              - Whole blood: Every 56 days (8 weeks)<br />
+              - Platelets: Every 7 days, up to 24 times a year<br />
+              - Plasma: Every 28 days, up to 13 times a year<br />
+              - Double red cells: Every 112 days for males, 168 days for females
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleAnswer('answer5')">
+            Where can I donate blood?
+          </button>
+          <div id="answer5" class="faq-answer">
+            <p>
+              You can donate blood at various locations including: <br />-
+              American Red Cross donation centers <br />- Community blood banks
+              <br />- Hospital blood donation departments <br />- Mobile blood
+              drives at workplaces, schools, and community events <br />Visit
+              your local blood center's website to find the nearest donation
+              location or upcoming blood drives.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+</body>

@@ -26,8 +26,9 @@
           >Find Location</a
         >
         <a class="nav-link main-link" href="/lifeBridge/upcommingCamp"
-          >Upcomming Camp</a
+          >Upcoming Camp</a
         >
+        <a class="nav-link main-link" href="/lifeBridge/community">Community</a>
       </div>
       <div class="navbar-nav ms-auto">
         <!-- If user not Exist -->
@@ -38,7 +39,9 @@
         <% } %>
         <!-- If user Exist -->
         <% if(currentUser) { %>
-        <a class="nav-link" href="/lifeBridge/user/dashboard"><b>Dashboard</b></a>
+        <a class="nav-link" href="/lifeBridge/user/dashboard"
+          ><b>Dashboard</b></a
+        >
         <a class="nav-link" href="/logout"><b>Logout</b></a>
         <% } %>
       </div>

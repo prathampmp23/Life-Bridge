@@ -6,13 +6,12 @@ const { isLoggedIn } = require("../middleware");
 
 const donorController = require("../controllers/donors.js");
 
-router
-  .route("/filtered/search")
-  .get(isLoggedIn, donorController.renderDonorDB);
+router.route("/filtered/search").get(isLoggedIn, donorController.renderDonorDB);
 
 router
   .route("/upcommingCamp")
   .get(isLoggedIn, donorController.renderCampForm)
   .post(wrapAsync(donorController.addCamp));
 
+router.route("/community").get(isLoggedIn, donorController.renderCommunity);
 module.exports = router;
