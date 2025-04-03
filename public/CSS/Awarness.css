@@ -11,36 +11,31 @@
 }
 
 #Aware h1 {
-  /* position: absolute; */
   color: white;
-  /* top: 12rem; */
   font-weight: bolder;
-  font-size: 4rem;
+  font-size: 5rem;
   left: 8rem;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
 .imgtext {
-  /* position: absolute; */
-  /* top: 20rem; */
-  width: 65vw;
+  width: 80vw;
   height: 60vh;
-  left: 8rem;
   font-weight: 400;
-  margin-top: 3rem;
-  font-size: 1.7rem;
+  margin-top: 2rem;
+  font-size: 1.8rem;
   color: white;
 }
 
 #btn-aware {
   border-radius: 1.2rem;
-  background-color: #ff5757;
+  background-color: white;
   /* height: 4rem; */
-  width: 13rem;
-  color: white;
+  /* width: 13rem; */
+  /* color: white; */
   font-weight: bold;
   left: 8rem;
-  font-size: 2.2rem;
+  font-size: 1.1em;
   border: none;
 }
 
@@ -63,12 +58,12 @@
 .text-info {
   line-height: 2rem;
   font-size: 1.3rem;
-  margin: 0 3rem;
+  margin: 1rem;
   color: rgb(25, 25, 25) !important;
 }
 
 #pic {
-  height: 22rem;
+  height: 100%;
   width: 35rem;
   border-radius: 1rem;
 }
@@ -131,74 +126,254 @@
   height: 2rem;
 }
 
-@media (max-width: 1200px) {
-  .info-card {
-    display: flex;
-    flex-wrap: wrap;
-  }
+
+
+/* Main Awareness Section Styling */
+#Aware {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 60px 20px;
+  background-color: #f8f9fa;
+  margin-bottom: 30px;
 }
 
-@media (max-width: 780px) {
+/* Statistics Section */
+.stats-container {
+  padding: 50px 20px;
+  background-color: #f1faee;
+  text-align: center;
+  margin-bottom: 30px;
+  border-radius: 8px;
+}
+
+.stats-container h3 {
+  color: #1d3557;
+  font-size: 2rem;
+  margin-bottom: 30px;
+  font-weight: 600;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.stat-box {
+  background-color: white;
+  padding: 25px 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.stat-box:hover {
+  transform: translateY(-5px);
+}
+
+.stat-number {
+  display: block;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #e63946;
+  margin-bottom: 10px;
+}
+
+.stat-box p {
+  font-size: 1rem;
+  color: #457b9d;
+  margin: 0;
+}
+
+
+
+/* Impact Section */
+.impact-section {
+  background-color: #1d3557;
+  padding: 60px 20px;
+  text-align: center;
+  color: white;
+  margin-bottom: 30px;
+  border-radius: 8px;
+}
+
+.impact-section h2 {
+  font-size: 2rem;
+  margin-bottom: 40px;
+  font-weight: 600;
+}
+
+.impact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.impact-card {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 25px 20px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.impact-card:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-5px);
+}
+
+.impact-card h4 {
+  color: #f1faee;
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.impact-card p {
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.6;
+}
+
+/* Myths Section */
+.myths-section {
+  /* padding: 60px 20px; */
+  background-color: #f8f9fa;
+  text-align: center;
+}
+
+.myths-section h2 {
+  color: #1d3557;
+  font-size: 2rem;
+  margin-bottom: 40px;
+  font-weight: 600;
+}
+
+.myths-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.myth-card {
+  background-color: white;
+  padding: 25px 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  text-align: left;
+  transition: transform 0.3s ease;
+}
+
+.myth-card:hover {
+  transform: translateY(-5px);
+}
+
+.myth-card h4 {
+  color: #e63946;
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.myth-card p {
+  color: #495057;
+  line-height: 1.6;
+}
+
+/* Call to Action Section */
+.cta-section {
+  padding: 60px 20px;
+  background-color: #457b9d;
+  text-align: center;
+  color: white;
+}
+
+.cta-section h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.cta-section p {
+  font-size: 1.1rem;
+  max-width: 800px;
+  margin: 0 auto 30px;
+  line-height: 1.6;
+}
+
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
   #Aware h1 {
-    left: 3.8rem;
-    font-size: 3rem;
-  }
-
-  .imgtext {
-    top: 18rem;
-    left: 3.8rem;
     font-size: 1.5rem;
-    line-height: 2rem;
-    width: 80vw;
   }
-
-  #btn-aware {
-    top: 38rem;
-    left: 3.8rem;
+  
+  .stat-number {
+    font-size: 2rem;
   }
-
-  #info-form {
-    display: flex;
-    flex-wrap: wrap;
-    height: 60rem;
-    margin: 1.5rem;
+  
+  .info-card {
+    flex-direction: column;
   }
-
-  .orgcamp-img {
-    height: 21rem;
-    width: 95%;
-    margin: 1rem;
+  
+  .image {
+    order: -1;
+    width: 100%;
   }
-
-  .camp-form {
-    height: 35rem;
-    width: 90%;
-    margin: 1rem;
-    padding: 1rem;
+  
+  .hidden-img {
+    display: block;
+  }
+  
+  .visible-img {
+    display: none;
+  }
+  
+  .cta-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .secondary-btn {
+    margin-left: 0;
+    margin-top: 15px;
   }
 }
 
-@media (max-width: 450px) {
+@media (max-width: 550px) {
   #Aware {
     height: 86vh !important;
     padding: 2.5rem;
   }
 
   #Aware h1 {
-    font-size: 3rem;
+    font-size: 2.5rem;
     font-size: bold;
   }
 
   .imgtext {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     height: 200px;
     width: 80vw;
     line-height: 2rem;
+    margin-top: 1rem !important;
   }
 
   #btn-aware {
     height: 3rem;
-    width: 9rem;
+    /* width: 9rem; */
     font-size: 1.4rem;
     border-radius: 0.8rem;
   }
@@ -217,7 +392,7 @@
   .text-info {
     line-height: 1.4rem;
     font-size: 1.2rem;
-    margin: 0 3rem;
+    margin: 1rem;
     color: black !important;
   }
 
@@ -226,8 +401,8 @@
   }
 
   #pic {
-    height: 18rem;
-    width: 18rem;
+    height: 100%;
+    width: 100%;
   }
 
   .hidden-img {
@@ -267,18 +442,6 @@
 }
 
 @media (max-width: 375px) {
-
-  #Aware h1 {
-    font-size: 1.8rem;
-    font-size: bold;
-    left: 3rem;
-    top: 7rem;
-  }
-
-  .imgtext {
-    font-size: 1.2rem;
-    line-height: 2rem;
-  }
 
   .camp-form input {
     width: 10rem;

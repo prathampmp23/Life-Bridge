@@ -17,10 +17,10 @@
 })();
 
 document.addEventListener("DOMContentLoaded", function () {
-  const faqItems = document.querySelectorAll(".faq-item");
+  const faqItems = document.querySelectorAll(".faq-content");
 
   faqItems.forEach((item) => {
-    const question = item.querySelector(".faq-question");
+    const question = item.querySelector(".faq-que");
 
     question.addEventListener("click", () => {
       item.classList.toggle("active");

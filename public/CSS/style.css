@@ -262,12 +262,16 @@ nav {
 /* Responsive Design */
 @media (max-width: 768px) {
   .testimonial-container {
-    width: 95%;
+    width: 80vw;
   }
 
   .testimonial {
     flex: 0 0 calc(100% / 1);
     /* Show 1 card at a time on small screens */
+  }
+  .container-test {
+    width: 100%;
+    padding: 0;
   }
 }
 
@@ -870,28 +874,28 @@ section {
   margin: 20px auto;
 }
 
-.faq-item {
+.faq-content {
   background-color: #fff;
   margin-bottom: 10px;
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-.faq-question {
+.faq-que {
   padding: 15px;
   cursor: pointer;
   position: relative;
   font-weight: bold;
 }
 
-.faq-answer {
+.faq-ans {
   padding: 0 15px;
   margin-bottom: 15px;
   line-height: 1.6;
   display: none;
 }
 
-.faq-question::after {
+.faq-que::after {
   content: "+";
   position: absolute;
   right: 15px;
@@ -900,11 +904,11 @@ section {
   font-size: 20px;
 }
 
-.faq-item.active .faq-answer {
+.faq-content.active .faq-ans {
   display: block;
 }
 
-.faq-item.active .faq-question::after {
+.faq-content.active .faq-que::after {
   content: "-";
 }
 
@@ -914,11 +918,11 @@ section {
     width: 95%;
   }
 
-  .faq-question {
+  .faq-que {
     padding: 10px;
   }
 
-  .faq-answer {
+  .faq-ans {
     padding: 0 10px;
   }
 }
