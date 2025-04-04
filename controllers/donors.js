@@ -39,10 +39,10 @@ module.exports.addCamp = async (req, res) => {
     const allCamps = await Camp.find();
     console.log(allCamps);
     req.flash("success", "Your Upcoming Camp Added Successfully!");
-    res.redirect("/lifeBridge/");
+    res.redirect("/lifeBridge/upcomingCamp");
   } catch (err) {
     req.flash("error", err.message);
-    res.redirect("/lifeBridge/upcommingCamp");
+    res.redirect("/lifeBridge/upcomingCamp");
   }
 };
 

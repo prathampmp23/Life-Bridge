@@ -25,7 +25,8 @@
   list-style-type: none;
   padding: 10px;
   margin: 0 5vw;
-  border-radius: 8px;
+  margin: 0 180px;
+  border-radius: 20px;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -40,7 +41,7 @@
   text-decoration: none;
   font-weight: 600;
   padding: 8px 12px;
-  border-radius: 4px;
+  border-radius: 25px;
   transition: background-color 0.3s;
 }
 

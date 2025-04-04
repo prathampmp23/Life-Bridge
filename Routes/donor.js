@@ -9,7 +9,7 @@ const donorController = require("../controllers/donors.js");
 router.route("/filtered/search").get(isLoggedIn, donorController.renderDonorDB);
 
 router
-  .route("/upcommingCamp")
+  .route("/upcomingCamp")
   .get(isLoggedIn, donorController.renderCampForm)
   .post(wrapAsync(donorController.addCamp));
 

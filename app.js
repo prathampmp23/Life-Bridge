@@ -116,12 +116,6 @@ app.get("/lifeBridge/filtered", async (req, res) => {
   });
 });
 
-// **Organize camp route**
-// app.get("/lifeBridge/upcommingCamp", async (req, res) => {
-//   const upcommingCamp = await Camp.find();
-//   res.render("listing/camp.ejs", { upcommingCamp });
-// });
-
 // **Custom ExpressError for "404" Error "page not found"
 app.all("*", (req, res, next) => {
   next(new ExpressError(404, "Page not found!"));
