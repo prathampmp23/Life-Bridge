@@ -25,6 +25,9 @@ Before running the project, make sure you have installed:
 
    ```bash
    git clone https://github.com/prathampmp23/Life-Bridge.git
+   ```
+
+   ```bash
    cd Life-Bridge
    ```
 
