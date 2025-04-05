@@ -1,36 +1,3 @@
-// Scroll-triggered animations
-document.addEventListener("DOMContentLoaded", () => {
-  const elements = document.querySelectorAll(
-    ".info-card, .form-container, .blood-bank-process , .dashboard-content"
-  );
-
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
-        }
-      });
-    },
-    { threshold: 0.2 }
-  );
-
-  elements.forEach((el) => observer.observe(el));
-
-  // Optional: Flowchart node hover effect
-  const nodes = document.querySelectorAll(".flowchart-node");
-  nodes.forEach((node) => {
-    node.addEventListener("mouseenter", () => {
-      nodes.forEach((n) => n.classList.add("dim"));
-      node.classList.remove("dim");
-    });
-    node.addEventListener("mouseleave", () => {
-      nodes.forEach((n) => n.classList.remove("dim"));
-    });
-  });
-});
-
-
 document.addEventListener("DOMContentLoaded", () => {
   const elements = document.querySelectorAll(".animate-on-load");
 
