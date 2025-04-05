@@ -55,6 +55,17 @@
 
     <!-- **Container Body** -->
     <div class="container">
+      <!-- Loader -->
+      <div id="page-loader" class="page-loader">
+        <div class="spinner">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
       <%- include("../includes/flash.ejs") %><%- body %>
     </div>
 
@@ -73,5 +84,6 @@
     <script src="/JS/map.js" defer></script>
     <script src="/JS/camp.js" defer></script>
     <script src="/JS/community.js" defer></script>
+    <script src="/js/animations.js"></script>
   </body>
 </html>

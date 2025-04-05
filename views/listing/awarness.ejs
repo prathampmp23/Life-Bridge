@@ -1,22 +1,90 @@
 <% layout("layouts/boilerplate") %>
 <body>
   <!-- Nav bar -->
-  <div id="Aware">
-    <h1>Organize an Awareness Session</h1>
-    <div class="imgtext">
+  <div id="Aware" class="animate-on-load">
+    <h1 class="animate-on-load">Organize an Awareness Session</h1>
+    <div class="imgtext animate-on-load">
       <p>
-        Take the first step to make a difference! Plan an Awareness
-        Session in your college, office, or society to help others understand
-        why blood donation is so important. Share its benefits, clear up common
-        myths, and encourage people to donate. Let's work together to save lives
-        and create awareness!
+        Take the first step to make a difference! Plan an Awareness Session in
+        your college, office, or society to help others understand why blood
+        donation is so important. Share its benefits, clear up common myths, and
+        encourage people to donate. Let's work together to save lives and create
+        awareness!
       </p>
-      <a href="/lifeBridge/upcomingCamp"><button id="btn-aware">Request a Session</button></a>
     </div>
+    <a href="/lifeBridge/upcomingCamp"
+      ><button id="btn-aware">Request a Session</button></a
+    >
   </div>
 
+  <section
+    class="blood-bank-process animate-on-load"
+    aria-label="Why blood banks charge for blood"
+  >
+    <div class="process-container animate-on-load">
+      <h2>Why Do Blood Banks Charge for Blood?</h2>
+      <p class="process-intro">
+        Blood is donated freely by generous individuals, but delivering safe and
+        usable blood to patients involves a complex process. Blood banks incur
+        significant costs to ensure every unit is tested, processed, stored, and
+        distributed safely. Here’s how it works:
+      </p>
+      <div class="flowchart">
+        <div class="flowchart-node" data-step="1">
+          <div class="node-icon">🩺</div>
+          <h3>Donation</h3>
+          <p>
+            Volunteers donate blood at camps or blood banks, a selfless act that
+            starts the journey.
+          </p>
+        </div>
+        <div class="flowchart-arrow">➔</div>
+        <div class="flowchart-node" data-step="2">
+          <div class="node-icon">🧪</div>
+          <h3>Testing</h3>
+          <p>
+            Each unit is rigorously tested for infections (e.g., HIV, Hepatitis)
+            to ensure safety.
+          </p>
+        </div>
+        <div class="flowchart-arrow">➔</div>
+        <div class="flowchart-node" data-step="3">
+          <div class="node-icon">⚙️</div>
+          <h3>Processing</h3>
+          <p>
+            Blood is separated into components (red cells, plasma, platelets)
+            for specific medical needs.
+          </p>
+        </div>
+        <div class="flowchart-arrow">➔</div>
+        <div class="flowchart-node" data-step="4">
+          <div class="node-icon">❄️</div>
+          <h3>Storage</h3>
+          <p>
+            Blood is stored in specialized refrigerators/freezers under strict
+            temperature controls.
+          </p>
+        </div>
+        <div class="flowchart-arrow">➔</div>
+        <div class="flowchart-node" data-step="5">
+          <div class="node-icon">🚚</div>
+          <h3>Distribution</h3>
+          <p>
+            Safe blood is transported to hospitals, ready to save lives when
+            needed.
+          </p>
+        </div>
+      </div>
+      <p class="process-footer">
+        These steps require advanced equipment, skilled staff, and constant
+        maintenance, which is why blood banks charge a nominal fee—not for the
+        blood itself, but for the life-saving process.
+      </p>
+    </div>
+  </section>
+
   <!-- Key Statistics Section -->
-  <div class="stats-container">
+  <div class="stats-container animate-on-load">
     <h3>Blood Donation: The Facts</h3>
     <div class="stats-grid">
       <div class="stat-box">
@@ -38,9 +106,11 @@
     </div>
   </div>
 
-  <div class="info-sec">
-    <div class="info-card">
-      <div class="image"><img src="/images/donor2.jpg" id="pic" /></div>
+  <div class="info-sec animate-on-load">
+    <div class="info-card animate-on-load">
+      <div class="image animate-on-load">
+        <img src="/images/donor2.jpg" id="pic" />
+      </div>
 
       <div class="text-info">
         <h3>What is the purpose of Awareness Sessions on Blood Donation?</h3>
@@ -52,12 +122,11 @@
           scarcity, dispelling myths, sharing truths about blood donation, and
           promoting its benefits.
         </p>
-        
       </div>
     </div>
 
-    <div class="info-card">
-      <div class="image">
+    <div class="info-card animate-on-load">
+      <div class="image animate-on-load">
         <img src="/images/donor1.jpg" id="pic" class="hidden-img" />
       </div>
 
@@ -69,56 +138,83 @@
           schools, colleges, corporates, and local communities across India.
           Activities like fun quizzes, street plays (Nukkad Nataks),
           competitions, and expert-led discussions—both online and offline—keep
-          the audience interested and informed. 
+          the audience interested and informed.
         </p>
       </div>
 
-      <div class="image">
+      <div class="image animate-on-load">
         <img src="/images/donor1.jpg" id="pic" class="visible-img" />
       </div>
     </div>
   </div>
 
   <!-- Blood Donation Impact Section -->
-  <div class="impact-section">
+  <div class="impact-sectionanimate-on-load">
     <h2>The Impact of Your Donation</h2>
     <div class="impact-grid">
       <div class="impact-card">
         <h4>Emergency Care</h4>
-        <p>Blood transfusions are vital for accident victims, surgical patients, and those suffering from traumatic injuries. A single car accident victim may require up to 100 units of blood.</p>
+        <p>
+          Blood transfusions are vital for accident victims, surgical patients,
+          and those suffering from traumatic injuries. A single car accident
+          victim may require up to 100 units of blood.
+        </p>
       </div>
       <div class="impact-card">
         <h4>Cancer Treatment</h4>
-        <p>Patients undergoing chemotherapy or radiation often experience reduced blood cell production and require regular transfusions to maintain their health during treatment.</p>
+        <p>
+          Patients undergoing chemotherapy or radiation often experience reduced
+          blood cell production and require regular transfusions to maintain
+          their health during treatment.
+        </p>
       </div>
       <div class="impact-card">
         <h4>Chronic Conditions</h4>
-        <p>People with blood disorders like thalassemia, sickle cell anemia, and hemophilia depend on regular blood transfusions throughout their lives.</p>
+        <p>
+          People with blood disorders like thalassemia, sickle cell anemia, and
+          hemophilia depend on regular blood transfusions throughout their
+          lives.
+        </p>
       </div>
       <div class="impact-card">
         <h4>Maternal Health</h4>
-        <p>Postpartum hemorrhage remains a leading cause of maternal mortality. Readily available blood supply can be the difference between life and death for new mothers.</p>
+        <p>
+          Postpartum hemorrhage remains a leading cause of maternal mortality.
+          Readily available blood supply can be the difference between life and
+          death for new mothers.
+        </p>
       </div>
     </div>
   </div>
 
   <!-- Common Myths Section -->
-  <div class="myths-section">
+  <div class="myths-section animate-on-load">
     <h2>Dispelling Common Myths</h2>
     <div class="myths-container">
       <div class="myth-card">
         <h4>Myth: Donating blood is painful and time-consuming</h4>
-        <p>Fact: The donation process is nearly painless and takes only about 15 minutes. The entire visit, including registration and refreshments, typically lasts less than an hour.</p>
+        <p>
+          Fact: The donation process is nearly painless and takes only about 15
+          minutes. The entire visit, including registration and refreshments,
+          typically lasts less than an hour.
+        </p>
       </div>
       <div class="myth-card">
         <h4>Myth: Donating blood weakens the donor</h4>
-        <p>Fact: The body replenishes the fluid lost during donation within 24 hours, and red blood cells are completely replenished within 4-8 weeks. Many donors report feeling energized after donation.</p>
+        <p>
+          Fact: The body replenishes the fluid lost during donation within 24
+          hours, and red blood cells are completely replenished within 4-8
+          weeks. Many donors report feeling energized after donation.
+        </p>
       </div>
       <div class="myth-card">
         <h4>Myth: Blood donation leads to weight gain or loss</h4>
-        <p>Fact: Donating blood has no impact on your weight. The amount of blood taken during donation (about 450ml) is quickly replenished by your body without affecting metabolism.</p>
+        <p>
+          Fact: Donating blood has no impact on your weight. The amount of blood
+          taken during donation (about 450ml) is quickly replenished by your
+          body without affecting metabolism.
+        </p>
       </div>
     </div>
   </div>
-
 </body>

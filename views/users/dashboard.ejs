@@ -2,7 +2,7 @@
 
 <div class="dashboard-container">
   <!-- User Profile Header -->
-  <div class="user-profile-header">
+  <div class="user-profile-header animate-on-load">
     <div class="profile-info">
       <div class="profile-avatar">
         <i class="fa-solid fa-user-circle"></i>
@@ -20,7 +20,7 @@
   </div>
 
   <!-- Dashboard Stats -->
-  <div class="dashboard-stats">
+  <div class="dashboard-stats animate-on-load">
     <div class="stat-card">
       <div class="stat-icon">
         <i class="fa-solid fa-droplet"></i>
@@ -51,7 +51,7 @@
   </div>
 
   <!-- Quick Actions -->
-  <div class="quick-actions">
+  <div class="quick-actions animate-on-load">
     <h2>Quick Actions</h2>
     <div class="action-buttons">
       <a href="/lifeBridge/filtered" class="action-btn">
@@ -74,7 +74,7 @@
   </div>
 
   <!-- User's Donation History (if any) -->
-  <div class="donation-history">
+  <div class="donation-history animate-on-load">
     <h2>My Donation History</h2>
     <% if (donations && donations.length > 0) { %>
       <table class="table">
@@ -98,15 +98,15 @@
         </tbody>
       </table>
     <% } else { %>
-      <div class="no-records">
+      <div class="no-records animate-on-load">
         <p>You haven't made any donations yet.</p>
-        <a href="/lifeBridge/user/donate" class="btn btn-primary">Register to Donate</a>
+        <a href="/lifeBridge/upcomingCamp" class="btn btn-primary">Register to Donate</a>
       </div>
     <% } %>
   </div>
 
   <!-- Upcoming Camps Section -->
-  <div class="upcoming-camps">
+  <div class="upcoming-camps animate-on-load">
     <h2>Upcoming Blood Donation Camps</h2>
     <div class="camps-list">
       <% if (upcomingCamps && upcomingCamps.length > 0) { %>
@@ -136,7 +136,7 @@
   </div>
 
   <!-- Blood Requirements Section -->
-  <div class="blood-requirements">
+  <div class="blood-requirements animate-on-load">
     <h2>Urgent Blood Requirements</h2>
     <div class="requirements-cards">
       <div class="requirement-card urgent">
