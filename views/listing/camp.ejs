@@ -4,15 +4,17 @@
 <section class="hero">
   <div class="front">
     <div id="tagLine">
-      <h1 class="animate-on-load">GIFT <span>BLOOD</span> SAVE LIFE</h1>
+      <h1>GIFT <span>BLOOD</span> SAVE LIFE</h1>
     </div>
   </div>
 </section>
 
 <!-- Add Camp Button (Placed more appropriately) -->
-<div class="controls animate-on-load">
+<div class="controls">
   <button class="add-camp-btn" id="openPopup">➕ Add Camp</button>
-  <button class="toggle-camps-btn" id="togglePastCamps">📅 Show Past Camps</button>
+  <button class="toggle-camps-btn" id="togglePastCamps">
+    📅 Show Past Camps
+  </button>
 </div>
 
 <!-- Popup Form for Adding a Camp -->
@@ -42,44 +44,40 @@
 <section class="upcoming">
   <h2>UPCOMING <span>BLOOD DONATION DRIVES</span></h2>
 
-  <% let currentDate = new Date().toISOString().split("T")[0]; %>
-  <% let upcomingCamps = allCamps.filter(camp => camp.date >= currentDate); %>
-  <% let completedCamps = allCamps.filter(camp => camp.date < currentDate); %>
-
-  <% if (upcomingCamps.length > 0) { %> 
-    <% for (let camp of upcomingCamps) { %>
-      <div class="drive">
-        <img src="../images/blood-camp-img.jpg" alt="Blood Donation Event" />
-        <div class="details">
-          <h3><%= camp.name %></h3>
-          <p><strong>Location:</strong> <%= camp.place %></p>
-          <p><strong>Date:</strong> <%= camp.date %></p>
-          <p><strong>Time:</strong> <%= camp.time %></p>
-        </div>
-      </div>
-    <% } %> 
-  <% } else { %>
-    <p>No upcoming camps at the moment.</p>
+  <% let currentDate = new Date().toISOString().split("T")[0]; %> <% let
+  upcomingCamps = allCamps.filter(camp => camp.date >= currentDate); %> <% let
+  completedCamps = allCamps.filter(camp => camp.date < currentDate); %> <% if
+  (upcomingCamps.length > 0) { %> <% for (let camp of upcomingCamps) { %>
+  <div class="drive">
+    <img src="../images/blood-camp-img.jpg" alt="Blood Donation Event" />
+    <div class="details">
+      <h3><%= camp.name %></h3>
+      <p><strong>Location:</strong> <%= camp.place %></p>
+      <p><strong>Date:</strong> <%= camp.date %></p>
+      <p><strong>Time:</strong> <%= camp.time %></p>
+    </div>
+  </div>
+  <% } %> <% } else { %>
+  <p>No upcoming camps at the moment.</p>
   <% } %>
 </section>
 
 <!-- Section for Completed Camps (Initially Hidden) -->
-<section class="completed" id="pastCampsSection" style="display: none;">
+<section class="completed" id="pastCampsSection" style="display: none">
   <h2>COMPLETED <span>BLOOD DONATION CAMPS</span></h2>
 
-  <% if (completedCamps.length > 0) { %> 
-    <% for (let camp of completedCamps) { %>
-      <div class="drive">
-        <img src="../images/blood-camp-img.jpg" alt="Blood Donation Event" />
-        <div class="details">
-          <h3><%= camp.name %></h3>
-          <p><strong>Location:</strong> <%= camp.place %></p>
-          <p><strong>Date:</strong> <%= camp.date %></p>
-          <p><strong>Time:</strong> <%= camp.time %></p>
-        </div>
-      </div>
-    <% } %> 
-  <% } else { %>
-    <p>No past camps available.</p>
+  <% if (completedCamps.length > 0) { %> <% for (let camp of completedCamps) {
+  %>
+  <div class="drive">
+    <img src="../images/blood-camp-img.jpg" alt="Blood Donation Event" />
+    <div class="details">
+      <h3><%= camp.name %></h3>
+      <p><strong>Location:</strong> <%= camp.place %></p>
+      <p><strong>Date:</strong> <%= camp.date %></p>
+      <p><strong>Time:</strong> <%= camp.time %></p>
+    </div>
+  </div>
+  <% } %> <% } else { %>
+  <p>No past camps available.</p>
   <% } %>
 </section>
