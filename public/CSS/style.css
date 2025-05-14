@@ -181,9 +181,6 @@ nav {
   padding: 10px 20px !important;
   border-radius: 8px !important;
 }
-.dashboard-btn:hover {
-  box-shadow: 1px 1px 10px rgba(128, 128, 128, 0.469);
-}
 
 .fa-arrow-right {
   padding: 10px;
@@ -566,7 +563,7 @@ footer {
 .vs-circle {
   position: absolute;
   top: 50%;
-  left: 47%;
+  left: 50%;
   transform: translate(-50%, -50%);
   background: white;
   color: #d9534f;

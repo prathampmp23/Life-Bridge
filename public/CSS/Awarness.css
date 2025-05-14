@@ -1,3 +1,10 @@
+:root {
+  --primary: #ff5757;   /* red shade matching your theme */
+  --secondary: #1d3557; /* dark blue */
+  --white: #ffffff;
+  --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
 #Aware {
   height: 85vh;
   background-image: linear-gradient(
@@ -146,7 +153,8 @@
   padding: 50px 20px;
   background-color: #f1faee;
   text-align: center;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
+  margin-top: 50px;
   border-radius: 2rem;
 }
 
@@ -166,7 +174,7 @@
 }
 
 .stat-box {
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.635);
   padding: 25px 15px;
   border-radius: 2rem;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -379,7 +387,7 @@
 .flowchart-node:hover {
   transform: translateY(-5px);
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-  background: linear-gradient(135deg, var(--primary), #e04b4b);
+  background: linear-gradient(135deg, var(--primary), #e04b4b1d);
   color: var(--white);
 }
 
@@ -475,7 +483,7 @@
 }
 
 .blood-bank-process {
-  opacity: 0;
+  /* opacity: 0; */
   transform: translateY(30px);
   transition: all 0.6s ease;
 }
